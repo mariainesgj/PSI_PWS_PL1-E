@@ -17,13 +17,13 @@ class FOController extends Controller
             //header('Location: ./router.php?' . INVALID_ACCESS_ROUTE);
         }
         else{
-            $this->rendeView('user', 'show', ['user'=>$user]);
+            $this->renderView('user', 'show', ['user'=>$user]);
         }
     }
 
     public function create()
     {
-        $this->rendeView('user', 'create');
+        $this->renderView('user', 'create');
     }
 
     public function store()

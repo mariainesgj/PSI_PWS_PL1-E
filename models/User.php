@@ -6,12 +6,12 @@ class User extends \ActiveRecord\Model
         array('password')
     );
 
-    public static function findByUserPass($nomeUser,$passUser)
+    public static function findByUserPass($username,$password)
     {
         return User::find('first', array(
             'conditions' => array(
                 'username = ? AND password = ?',
-                $nomeUser, $passUser
+                $username, $password
             )
         ));
     }

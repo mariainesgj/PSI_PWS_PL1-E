@@ -6,20 +6,21 @@ class Auth
         session_start();
     }
 
-    //Devolver true
-    public function checkAuth($username, $password) {
-        $valid_username = 'user';
-        $valid_password = 'pass123';
-
-        if ($username == $valid_username && $password == $valid_password) {
-            $_SESSION['username'] = $username;
-            return true;
-        } else {
+    public function checkAuth($username, $password)
+    {
+        $user = User::find_by_username_and_password($username,$password);
+        if(is_null($username)){
+            //login inválido
             return false;
+        }else{
+            //login válido
+            //guardar na sessão -> username, userid, role
+            //fazer um vetor auth para guardar
+            $Auth = ['username','userid','role'];
+            return true;
         }
     }
 
-    //USER::find_by_username_and_password
     //Fazer as funções
     public function IsLoggedIn() {
 
