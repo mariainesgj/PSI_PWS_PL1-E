@@ -9,14 +9,17 @@ class Auth
     public function checkAuth($username, $password)
     {
         $user = User::find_by_username_and_password($username,$password);
-        if(is_null($username)){
+        if(is_null($user)){
             //login inválido
             return false;
         }else{
             //login válido
             //guardar na sessão -> username, userid, role
             //fazer um vetor auth para guardar
-            $Auth = ['username','userid','role'];
+            $_SESSION['username'] = $user->username;
+            $_SESSION['user_id'] = $user->id;
+            $_SESSION['role'] = $user->role;
+
             return true;
         }
     }
@@ -33,7 +36,7 @@ class Auth
 
     public function getUserID()
     {
-        if(isset($_SESSION['user_id'])){
+        if($this->IsLoggedIn()){
             return $_SESSION['user_id'];
         }
         return null;
@@ -41,21 +44,18 @@ class Auth
 
     public function getUserName()
     {
-        if(isset($_SESSION['username'])){
+        if($this->IsLoggedIn()){
             return $_SESSION['username'];
         }
         return null;
     }
 
-    public function getUserRole() //bool
+    public function getUserRole()
     {
-        if(isset($_SESSION['role'])){
-            $role = $_SESSION['role'];
-            if($role === 'funcionário' || $role === 'admnistrador'){
-                return true;
-            }
+        if($this->IsLoggedIn()){
+            return $_SESSION['role'];
         }
-        return false;
+        return '';
     }
 
     public function IsLoggedInAs($roles)
