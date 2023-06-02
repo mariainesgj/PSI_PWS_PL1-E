@@ -6,7 +6,7 @@
         <input type="text" class="form-control" id="username" name="username" value="<?=$user->username?>">
     </div>
     <div class="mb-3">
-        <label for="passowrd" class="form-label">Palavra Passe: </label>
+        <label for="password" class="form-label">Palavra Passe: </label>
         <input type="text" class="form-control" id="password" name="password" value="<?=$user->password?>">
     </div>
     <div class="mb-3">

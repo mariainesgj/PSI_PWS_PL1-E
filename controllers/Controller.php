@@ -70,6 +70,16 @@ class Controller
         }
     }
 
+    // Fazer função
+    protected function authenticationFilterAllows($roles=[])
+    {
+        //isLoggedInAs($roles);
+        $auth = new Auth();
+        if(!$auth->IsLoggedInAs($roles)) {
+            header('Location: ' . constant('INVALID_ACCESS_ROUTE'));
+        }
+    }
+
 }
 
 ?>

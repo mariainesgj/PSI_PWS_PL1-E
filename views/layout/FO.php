@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>FolhaObra App | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -42,7 +42,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
+                <a href="index.php?c=home&a=index" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
@@ -97,7 +97,7 @@
                     <img src="./public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Funcionário</a>
+                    <a href="#" class="d-block">Cliente</a>
                 </div>
             </div>
 
@@ -119,20 +119,50 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <a href="index.php?c=home&a=index" class="nav-link active">
+                            <i class="nav-icon fas fa-home"></i>
                             <p>
-                                Dashboard
-                                <i class="right fas fa-angle-left"></i>
+                                Home
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                        <a href="index.php?c=linhaobra&a=index" class="nav-link">
+                            <i class="nav-icon fas fa-file"></i>
                             <p>
-                                Widgets
-                                <span class="right badge badge-danger">New</span>
+                                Linhas Obras
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?c=servico&a=index" class="nav-link">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                Serviços
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?c=user&a=index" class="nav-link">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                Users
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?c=empresa&a=index" class="nav-link">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                Empresa
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?c=iva&a=index" class="nav-link">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                Iva
                             </p>
                         </a>
                     </li>

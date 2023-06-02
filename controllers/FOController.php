@@ -7,7 +7,7 @@ class FOController extends Controller
     public function index()
     {
         $users = User::all();
-        $this->renderView('user','index',['users' => $users]);
+        $this->renderView('user','index',['users' => $users],'FO');
     }
 
     public function show($id)

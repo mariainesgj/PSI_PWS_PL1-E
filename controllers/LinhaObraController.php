@@ -1,20 +1,20 @@
 <?php
+require_once 'models/Linhaobra.php';
 require_once 'controllers/Controller.php';
 
-class BOController extends Controller
+class LinhaObraController extends Controller
 {
-    public function index()
-    {
-        $empresa = Empresa::all();
-        $this->renderView('empresa','index',['empresa' => $empresa],'default');
-    }
-
-    public function login()
+    public function index($id_folhaobra)
     {
 
     }
 
     public function show($id)
+    {
+
+    }
+
+    public function selectServico()
     {
 
     }
@@ -44,4 +44,3 @@ class BOController extends Controller
 
     }
 }
-?>

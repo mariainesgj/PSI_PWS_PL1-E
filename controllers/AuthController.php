@@ -22,7 +22,7 @@ class AuthController extends Controller{
             //$this->renderView('auth', 'index');
         }
     }
-    public function Logout() {
+    public function logout() {
         $auth = new Auth();
         $auth->Logout();
         $this->redirectToRoute('auth','index');
