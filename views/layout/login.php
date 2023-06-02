@@ -18,7 +18,6 @@
 
 <?php require_once($viewPath); ?>
 
-
 <!-- jQuery -->
 <script src="./public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
