@@ -29,11 +29,11 @@
                     <td><?=$user->localidade?></td>
                     <td><?=$user->role?></td>
                     <td>
-                        <a href="index.php?c=book&a=show&id=<?=$user->id ?>"
+                        <a href="index.php?c=user&a=show&id=<?=$user->id ?>"
                            class="btn btn-info" role="button">Show</a>
-                        <a href="index.php?c=book&a=edit&id=<?=$user->id ?>"
+                        <a href="index.php?c=user&a=edit&id=<?=$user->id ?>"
                            class="btn btn-info" role="button">Edit</a>
-                        <a href="index.php?c=book&a=delete&id=<?=$user->id ?>"
+                        <a href="index.php?c=user&a=delete&id=<?=$user->id ?>"
                            class="btn btn-warning" role="button">Delete</a>
                     </td>
                 </tr>

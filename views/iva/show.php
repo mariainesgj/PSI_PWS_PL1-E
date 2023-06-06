@@ -30,7 +30,7 @@
             </tbody>
             <tr>
                 <td>
-                    <a href="router.php?c=iva&a=create" class="btn btn-info" role="button">Criar</a>
+                    <a href="index.php?c=iva&a=create" class="btn btn-info" role="button">Criar</a>
                 </td>
             </tr>
         </table>
