@@ -34,7 +34,7 @@ class LinhaObraController extends Controller
         $this->renderView('linhaobra', 'create',['servico'=>$servico,'folhaobra'=>$folhaobra]);
     }
 
-    public function store()
+    public function store($id_cliente)
     {
         $linhasobra = new Linhaobra($_POST);
         if($linhasobra->is_valid()){

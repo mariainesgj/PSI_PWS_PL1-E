@@ -5,8 +5,7 @@ class BOController extends Controller
 {
     public function index()
     {
-        $empresa = Empresa::all();
-        $this->renderView('empresa','index',['empresa' => $empresa],'default');
+    
     }
 
     public function login()
