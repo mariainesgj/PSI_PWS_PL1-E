@@ -2,7 +2,9 @@
 class Linhaobra extends \ActiveRecord\Model
 {
     static $belongs_to = array(
-        array('servico')
+        array('servico'),
+         array('folhaobra')
     );
+
 }
 ?>

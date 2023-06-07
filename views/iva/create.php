@@ -7,7 +7,7 @@
     </div>
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição: </label>
-        <input type="text" class="form-control" id="descricao" name="descricao">
+        <input type="text" class="form-control" id="campo2" name="descricao">
     </div>
     <div class="mb-3">
         <label for="vigor" class="form-label">Em Vigor: </label>

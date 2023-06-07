@@ -1,8 +1,6 @@
-<!--<br>
 <div style="text-align: center; border-style: ridge;">
     <h2 class="text-left top-space">IVA Show</h2>
 </div>
-<br><br>-->
 <div class="row">
     <div class="col-sm-12">
         <table class="table tablestriped">
@@ -30,7 +28,7 @@
             </tbody>
             <tr>
                 <td>
-                    <a href="index.php?c=iva&a=create" class="btn btn-info" role="button">Criar</a>
+                    <a href="router.php?c=iva&a=create" class="btn btn-info" role="button">Criar</a>
                 </td>
             </tr>
         </table>

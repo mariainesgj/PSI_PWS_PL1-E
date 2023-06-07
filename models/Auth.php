@@ -24,7 +24,6 @@ class Auth
         }
     }
 
-    //Fazer as funções
     public function IsLoggedIn() {
 
         if (isset($_SESSION['username'])) {

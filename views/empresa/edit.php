@@ -18,7 +18,7 @@
         <input type="text" class="form-control" id="nif" name="nif" value="<?=$empresa->nif?>">
     </div>
     <div class="mb-3">
-        <label for="campo5" class="form-label">Morada:</label>
+        <label for="morada" class="form-label">Morada:</label>
         <input type="text" class="form-control" id="campo5" name="morada" value="<?=$empresa->morada?>">
     </div>
     <div class="mb-3">

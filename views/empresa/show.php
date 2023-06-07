@@ -1,8 +1,6 @@
-<!--<br>
 <div style="text-align: center; border-style: ridge;">
     <h2 class="text-left top-space">Empresa Show</h2>
 </div>
-<br><br> -->
 <div class="row">
     <div class="col-sm-12">
         <table class="table table-hover">

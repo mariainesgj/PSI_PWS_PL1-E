@@ -1,4 +1,4 @@
-html>
+<html>
 <body>
 <form action="index.php?c=empresa&a=store" method="POST" class="container">
     <div class="mb-3">

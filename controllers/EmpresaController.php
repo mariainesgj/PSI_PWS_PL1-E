@@ -7,12 +7,7 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::all();
         $this->renderView('empresa','index',['empresa' => $empresa],'default');
-        $ivas = Iva::all();
-        $this->renderView('iva', 'index', ['ivas'=> $ivas], 'default');
-        $servicos = Servico::All();
-        $this->renderView('servico', 'index', ['servicos'=> $servicos], 'default');
     }
-
 
     public function show($id)
     {
