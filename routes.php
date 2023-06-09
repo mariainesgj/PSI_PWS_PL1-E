@@ -4,8 +4,6 @@ require_once 'controllers/BOController.php';
 require_once 'controllers/FOController.php';
 require_once 'controllers/HomeController.php';
 require_once 'controllers/EmpresaController.php';
-
-
 require_once 'controllers/IvaController.php';
 require_once 'controllers/UserController.php';
 require_once 'controllers/ServicoController.php';
