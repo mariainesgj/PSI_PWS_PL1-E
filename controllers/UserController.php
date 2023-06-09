@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if(is_null($user)) {
-            //header('Location: ./router.php?' . INVALID_ACCESS_ROUTE);
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }
         else{
             $this->renderView('user', 'show', ['user'=>$user]);
@@ -28,7 +28,7 @@ class UserController extends Controller
 
     public function store()
     {
-        $user = new User ($_POST);
+        $user = new User ($this-> getHTTPPost());
         if($user->is_valid()){
             $user->save();
             $this->redirectToRoute('user','index');
@@ -41,7 +41,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if(is_null($user)){
-            //To do redirect error
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }else{
             $this->renderView('user','edit',['user'=> $user]);
         }

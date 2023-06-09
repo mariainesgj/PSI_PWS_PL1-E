@@ -13,7 +13,7 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::find($id);
         if(is_null($empresa)) {
-            //header('Location: ./router.php?' . INVALID_ACCESS_ROUTE);
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }
         else{
             $this->renderView('empresa', 'show', ['empresa'=>$empresa]);
@@ -40,7 +40,7 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::find($id);
         if(is_null($empresa)){
-            //To do redirect error
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }else{
             $this->renderView('empresa','edit',['empresa'=> $empresa]);
         }

@@ -5,5 +5,15 @@ class Folhaobra extends \ActiveRecord\Model
         array('linhaobras'),
         array('servico','through' => 'linhaobras')
     );
+
+    public function atualizartotais()
+    {
+        /*percorrer todas as linhas
+        $valortotal
+        $ivatotal
+        $total
+        atribuir os valores aos modelos e save*/
+    }
+
 }
 ?>

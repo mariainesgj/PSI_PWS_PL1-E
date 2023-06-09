@@ -1,41 +1,102 @@
-<h2 class="text-left top-space">Serviço Index</h2>
-<h2 class="top-space"></h2>
-<div class="row">
-    <div class="col-sm-12">
-        <table class="table tablestriped"><thead>
-            <th><h3>Id</h3></th>
-            <th><h3>Referência</h3></th>
-            <th><h3>Descrição</h3></th>
-            <th><h3>Preço/Hora</h3></th>
-            <th><h3>Id Iva</h3></th>
-            <th><h3>User Actions</h3></th>
-            </thead>
-            <tbody>
-            <?php foreach ($servicos as $servico) { ?>
+<html>
+<body>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Serviço</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="index.php?c=home&a=index">Home</a></li>
+                    <li class="breadcrumb-item active">Serviço</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Serviço</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped projects">
+                <thead>
                 <tr>
-                    <td><?=$servico->id?></td>
-                    <td><?=$servico->referencia?></td>
-                    <td><?=$servico->descricao?></td>
-                    <td><?=$servico->precohora?></td>
-                    <td><?=$servico->id->iva?></td>
-                    <td>
-                        <a href="index.php?c=ivak&a=show&id=<?=$servico->id ?>"
-                           class="btn btn-info" role="button">Show</a>
-                        <a href="index.php?c=iva&a=edit&id=<?=$servico->id ?>"
-                           class="btn btn-info" role="button">Edit</a>
-                        <a href="index.php?c=iva&a=delete&id=<?=$servico->id ?>"
-                           class="btn btn-warning" role="button">Delete</a>
-                    </td>
+                    <th style="width: 1%">
+                        Id
+                    </th>
+                    <th style="width: 8%">
+                        Referência
+                    </th>
+                    <th style="width: 10%">
+                        Descrição
+                    </th>
+                    <th style="width: 8%">
+                        Preço/Hora
+                    </th>
+                    <th style="width: 8%">
+                        Id Iva
+                    </th>
+                    <th style="width: 1%">
+                        User Actions
+                    </th>
                 </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <?php foreach ($servicos as $servico) { ?>
+                    <tr>
+                        <td><?=$servico->id?></td>
+                        <td><?=$servico->referencia?></td>
+                        <td><?=$servico->descricao?></td>
+                        <td><?=$servico->precohora?></td>
+                        <td><?=$servico->id_iva?></td>
+                        <td class="project-actions text-right">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary btn-sm" href="index.php?c=servico&a=show&id=<?=$servico->id?>">
+                                            <i class="fas fa-folder"></i>
+                                        </a>
+                                        <a class="btn btn-info btn-sm" href="index.php?c=servico&a=edit&id=<?=$servico->id?>">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="index.php?c=servico&a=delete&id=<?=$servico->id?>">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
     </div>
-    <div class="col-sm-6">
-        <h3>Create a new Iva</h3>
-        <p>
-            <a href="index.php?c=iva&a=create" class="btn btn-info"
-               role="button">New</a>
-        </p>
-    </div>
-</div> <!-- /row -->
+    <!-- /.card -->
+</section>
+<!-- /.content -->
+
+<div class="col-sm-6">
+    <h3>Create a new Serviço</h3>
+    <p>
+        <a href="index.php?c=servico&a=create" class="btn btn-info"
+           role="button">New</a>
+    </p>
+</div>
+</body>
+</html>

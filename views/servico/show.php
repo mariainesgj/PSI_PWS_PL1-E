@@ -1,41 +1,87 @@
-<!--<br>
-<div style="text-align: center; border-style: ridge;">
-    <h2 class="text-left top-space">Produto Show</h2>
-</div>
-<br><br>-->
-<div class="row">
-    <div class="col-sm-12">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Referência</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-                <th>Stock</th>
-                <th>Taxa IVA</th>
-                <th>Permissões</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><?=$servico->id?></td>
-                <td><?=$servico->referencia?></td>
-                <td><?=$servico->descricao?></td>
-                <td><?=$servico->preco?></td>
-                <td><?=$servico->stock?></td>
-                <td><?=$servico->taxaid?></td>
-                <td>
-                    <a href="index.php?c=produto&a=edit&id=<?=$servico->id ?>"
-                       class="btn btn-info" role="button">Editar</a>
-                </td>
-            </tr>
-            </tbody>
-            <tr>
-                <td>
-                    <a href="index.php?c=produto&a=create" class="btn btn-info" role="button">Criar</a>
-                </td>
-            </tr>
-        </table>
+<html>
+<body>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>User Show</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="index.php?c=home&a=index">Home</a></li>
+                        <li class="breadcrumb-item active">Serviço Show</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Serviço</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Referência</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$servico->referencia?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Descrição</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$servico->descricao?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Preço/Hora</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$servico->precohora?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Id Iva</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$servico->id_iva?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+    </section>
+    <!-- /.content -->
+    <div class="row">
+        <div class="col-12 text-left">
+            <a href="index.php?c=servico&a=index" class="btn btn-secondary">Cancel</a>
+        </div>
     </div>
 </div>
+<!-- /.content-wrapper -->
+</body>
+</html>

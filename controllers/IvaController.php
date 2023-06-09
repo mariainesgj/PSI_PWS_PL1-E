@@ -12,8 +12,8 @@ class IvaController extends Controller
     public function show($id)
     {
         $ivas = Iva::find($id);
-        if(is_null($iva)) {
-            //header('Location: ./router.php?' . INVALID_ACCESS_ROUTE);
+        if(is_null($ivas)) {
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }
         else{
             $this->renderView('iva', 'show', ['iva'=>$ivas]);
@@ -28,7 +28,7 @@ class IvaController extends Controller
     public function store()
     {
         $ivas = new Iva ($_POST);
-        if($iva->is_valid()){
+        if($ivas->is_valid()){
             $ivas->save();
             $this->redirectToRoute('iva','index');
         }else{
@@ -40,7 +40,7 @@ class IvaController extends Controller
     {
         $ivas = Iva::find($id);
         if(is_null($ivas)){
-            //To do redirect error
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }else{
             $this->renderView('iva','edit',['iva'=> $ivas]);
         }

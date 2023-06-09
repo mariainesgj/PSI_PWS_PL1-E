@@ -15,7 +15,7 @@ class LinhaObraController extends Controller
     $linhasobras = Linhaobra::find([$id]);
         if (is_null($linhasobras))
         {
-            header('Location: ./router.php' . INVALID_ACCESS_ROUTE);
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }
         else {
             $this->renderView('linhaobra' , 'show' , ['linhas' => $linhasobras] );
@@ -24,7 +24,6 @@ class LinhaObraController extends Controller
 
     public function selectServico()
     {
-
     }
 
     public function create()
@@ -52,8 +51,7 @@ class LinhaObraController extends Controller
         $folhaobra = Folhaobra::all();
         $linhasobra = Linhaobra::find([$id]);
         if (is_null($linhasobra)) {
-            //TODO redirect to standard error page
-            header('Location: ./router.php?' . INVALID_ACCESS_ROUTE);
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         } else {
             $this->renderView('linhaobra', 'edit', ['linhas' => $linhasobra,'servico'=> $servico,'folhaobra'=> $folhaobra]);
         }

@@ -6,14 +6,14 @@ class ServicoController extends Controller
     public function index()
     {
         $servicos = Servico::all();
-        $this->renderView('servico','index',['servico' => $servicos],'default');
+        $this->renderView('servico','index',['servicos' => $servicos],'default');
     }
 
     public function show($id)
     {
         $servicos = Servico::find($id);
         if(is_null($servicos)) {
-            //header('Location: ./router.php?' . INVALID_ACCESS_ROUTE);
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }
         else{
             $this->renderView('servico', 'show', ['servico'=>$servicos]);
@@ -40,7 +40,7 @@ class ServicoController extends Controller
     {
         $servicos = Servico::find($id);
         if(is_null($servicos)){
-            //To do redirect error
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }else{
             $this->renderView('servico','edit',['servico'=> $servicos]);
         }

@@ -14,7 +14,7 @@ class FolhaObraController extends Controller
     {
         $folhaobra = Folhaobra::find($id);
         if(is_null($folhaobra)) {
-            //header('Location: ./router.php?' . INVALID_ACCESS_ROUTE);
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }
         else{
             $this->renderView('folhaobra', 'show', ['folhaobra'=>$folhaobra]);
