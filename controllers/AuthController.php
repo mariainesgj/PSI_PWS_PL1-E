@@ -17,9 +17,18 @@ class AuthController extends Controller{
         $auth = new Auth();
 
         if ($auth->checkAuth($username, $password)) {
+            // Obter a função (role) do usuário
+            $role = $auth->getUserRole($username); // Substitua pela lógica correta para obter a função do usuário
 
+            // Redirecionar para a página apropriada com base na função (role)
+            if ($role === 'cliente') {
+                $this->redirectToRoute('fo', 'index'); // Redirecionar para o controlador e ação adequados do Front Office (cliente)
+            } else {
+                $this->redirectToRoute('bo', 'index'); // Redirecionar para o controlador e ação adequados do layout padrão (admin e funcionário)
+            }
         } else {
-            //$this->renderView('auth', 'index');
+            $data['error_message'] = 'Credenciais inválidas';
+            $this->renderView('auth', 'index', $data, 'login');
         }
     }
     public function logout() {

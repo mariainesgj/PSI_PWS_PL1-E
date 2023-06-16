@@ -7,7 +7,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        $this->renderView('user','index',['users' => $users],'FO');
+        $this->renderView('user','index',['users' => $users]);
     }
 
     public function show($id)

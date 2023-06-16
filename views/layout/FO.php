@@ -113,44 +113,59 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=linhaobra&a=index" class="nav-link">
-                            <i class="nav-icon fas fa-file"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Linhas Obras
+                                Dashboard
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=servico&a=index" class="nav-link">
+                        <a href="index.php?c=folhaobra&a=create" class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
-                                Serviços
+                                Emitir FO
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=user&a=index" class="nav-link">
+                        <a href="index.php?c=folhaobra&a=index" class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
-                                Users
+                                FO Emitidas
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=empresa&a=index" class="nav-link">
+                        <a href="index.php?c=user&a=create" class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
-                                Empresa
+                                Registo de Clientes
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=iva&a=index" class="nav-link">
-                            <i class="nav-icon fas fa-file"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
-                                Iva
+                                Gestão de Dados
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="index.php?c=servico&a=index" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Serviços</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php?c=iva&a=index" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Iva</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>

@@ -4,10 +4,10 @@ require_once 'controllers/Controller.php';
 
 class LinhaObraController extends Controller
 {
-    public function index($id_folhaobra)
+    public function index($id)
     {
-        $linhasobras = Linhaobra::All();
-        $this->renderView('linhaobra', 'index' , ['linhas' => $linhasobras]);
+        $linhasobras = Linhaobra::All([$id]);
+        $this->renderView('linhaobra', 'index' , ['linhaobras' => $linhasobras] , 'default');
     }
 
     public function show($id)

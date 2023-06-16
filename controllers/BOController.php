@@ -5,42 +5,47 @@ class BOController extends Controller
 {
     public function index()
     {
-    
+        $this->renderView('bo', 'index', [], 'default');
     }
 
-    public function login()
+    public function dashboard()
     {
-
+        $this->renderView('bo', 'index', [], 'default');
     }
 
-    public function show($id)
+    public function emitirfo()
     {
-
+        $this->renderView('folhaobra', 'create', [], 'default');
     }
 
-    public function create()
+    public function foemitidas()
     {
-
+        $this->renderView('folhaobra', 'index', [], 'default');
     }
 
-    public function store()
+    public function registoclientes()
     {
-
+        $this->renderView('bo', 'registoclientes', [], 'default');
     }
 
-    public function edit($id)
+    public function users()
     {
-
+        $this->renderView('user', 'index', [], 'default');
     }
 
-    public function update($id)
+    public function servicos()
     {
-
+        $this->renderView('servico', 'index', [], 'default');
     }
 
-    public function delete($id)
+    public function iva()
     {
+        $this->renderView('iva', 'index', [], 'default');
+    }
 
+    public function empresa()
+    {
+        $this->renderView('empresa', 'index', [], 'default');
     }
 }
 ?>

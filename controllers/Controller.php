@@ -28,7 +28,16 @@ class Controller
     {
         extract($data);
         $viewPath = 'views/' . $controllerPrefix . '/' . $viewName . '.php';
-        $layoutPath = 'views/layout/' . $layout . '.php';
+
+        // Verificar se a vista é "bo" (admin/funcionário) ou "fo" (cliente)
+        if ($controllerPrefix === 'bo') {
+            $layoutPath = 'views/layout/default.php';
+        } elseif ($controllerPrefix === 'fo') {
+            $layoutPath = 'views/layout/FO.php';
+        } else {
+            $layoutPath = 'views/layout/' . $layout . '.php';
+        }
+
         require_once($layoutPath);
     }
 
@@ -70,16 +79,13 @@ class Controller
         }
     }
 
-    // Fazer função
     protected function authenticationFilterAllows($roles=[])
     {
-        //isLoggedInAs($roles);
         $auth = new Auth();
         if(!$auth->IsLoggedInAs($roles)) {
             header('Location: ' . constant('INVALID_ACCESS_ROUTE'));
         }
     }
-
 }
 
 ?>

@@ -11,7 +11,9 @@ class FolhaObraController extends Controller
         $folhaobras = Folhaobra::all();
         $empresas = Empresa::all();
         $users = User::all();
-        $this->renderView('folhaobra','index',['folhaobras' => $folhaobras, 'empresas' => $empresas, 'users' => $users],'default');
+        $linhaobras = Linhaobra::all();
+        $this->renderView('folhaobra','index',['folhaobras' => $folhaobras, 'empresas' => $empresas, 'users' => $users,
+            'linhaobras' => $linhaobras],'default');
     }
 
     public function show($id)

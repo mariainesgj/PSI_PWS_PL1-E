@@ -3,7 +3,7 @@ class Folhaobra extends \ActiveRecord\Model
 {
     static $has_many = array(
         array('linhaobras'),
-        array('servico','through' => 'linhaobras')
+        array('servicos','through' => 'linhaobras')
     );
 
     public function atualizartotais()

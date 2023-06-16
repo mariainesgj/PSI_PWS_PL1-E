@@ -4,8 +4,6 @@ require_once 'controllers/BOController.php';
 require_once 'controllers/FOController.php';
 require_once 'controllers/HomeController.php';
 require_once 'controllers/EmpresaController.php';
-
-
 require_once 'controllers/IvaController.php';
 require_once 'controllers/UserController.php';
 require_once 'controllers/ServicoController.php';
@@ -22,11 +20,13 @@ return [
     'bo' => [
         'index' => ['GET', 'BOController', 'index'],
         'login' => ['POST', 'BOController', 'login'],
+        'dashboard' => ['GET', 'BOController', 'dashboard'],
         'logout' => ['GET', 'BOController', 'logout'],
     ],
     'fo' => [
         'index' => ['GET', 'FOController', 'index'],
         'login' => ['POST', 'FOController', 'login'],
+        'dashboard' => ['GET', 'FOController', 'dashboard'],
         'logout' => ['GET', 'FOController', 'logout'],
     ],
     'home' => [

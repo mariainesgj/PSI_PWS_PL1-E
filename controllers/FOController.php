@@ -6,36 +6,36 @@ class FOController extends Controller
 {
     public function index()
     {
-
+        $this->renderView('fo', 'index', [], 'FO');
     }
 
-    public function show($id)
+    public function dashboard()
     {
-
+        $this->renderView('fo', 'index', [], 'FO');
     }
 
-    public function create()
+    public function emitirfo()
     {
-
+        $this->renderView('folhaobra', 'create', [], 'FO');
     }
 
-    public function store()
+    public function foemitidas()
     {
-
+        $this->renderView('folhaobra', 'index', [], 'FO');
     }
 
-    public function edit($id)
+    public function registoclientes()
     {
-
+        $this->renderView('fo', 'registoclientes', [], 'FO');
     }
 
-    public function update($id)
+    public function servicos()
     {
-
+        $this->renderView('servico', 'index', [], 'FO');
     }
 
-    public function delete($id)
+    public function iva()
     {
-
+        $this->renderView('iva', 'index', [], 'FO');
     }
 }

@@ -3,6 +3,9 @@
         <a href="index.php?c=auth&a=index">FolhaObra App</b></a>
     </div>
     <!-- /.login-logo -->
+    <?php if(isset($error_message)): ?>
+        <div class="alert alert-danger"><?php echo $error_message; ?></div>
+    <?php endif; ?>
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
