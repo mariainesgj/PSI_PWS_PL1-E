@@ -22,8 +22,10 @@ class LinhaObraController extends Controller
         }
     }
 
-    public function selectServico()
+    public function selectservico()
     {
+        $servicos = Servico::all();
+        $this->renderView('linhaobra', 'selectServico', ['servicos' => $servicos]);
     }
 
     public function create()

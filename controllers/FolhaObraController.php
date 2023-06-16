@@ -1,5 +1,7 @@
 <?php
 require_once 'models/Folhaobra.php';
+require_once 'models/Empresa.php';
+require_once 'models/User.php';
 require_once 'controllers/Controller.php';
 
 class FolhaObraController extends Controller
@@ -7,7 +9,9 @@ class FolhaObraController extends Controller
     public function index()
     {
         $folhaobras = Folhaobra::all();
-        $this->renderView('folhaobra','index',['folhaobras' => $folhaobras]);
+        $empresas = Empresa::all();
+        $users = User::all();
+        $this->renderView('folhaobra','index',['folhaobras' => $folhaobras, 'empresas' => $empresas, 'users' => $users],'default');
     }
 
     public function show($id)
@@ -21,9 +25,10 @@ class FolhaObraController extends Controller
         }
     }
 
-    public function selectCliente()
+    public function selectcliente()
     {
-
+        $clientes = User::where('role', 'cliente')->get();
+        $this->renderView('folhaobra', 'selectCliente', ['clientes' => $clientes]);
     }
 
     public function create()
@@ -65,7 +70,7 @@ class FolhaObraController extends Controller
 
     public function delete($id)
     {
-        $folhaobra = folhaobra::find($id);
+        $folhaobra = Folhaobra::find($id);
         $folhaobra->delete();
         $this->redirectToRoute('folhaobra','index');
     }

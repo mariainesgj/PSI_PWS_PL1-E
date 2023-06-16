@@ -5,8 +5,8 @@ class EmpresaController extends Controller
 {
     public function index()
     {
-        $empresa = Empresa::all();
-        $this->renderView('empresa','index',['empresa' => $empresa],'default');
+        $empresas = Empresa::all();
+        $this->renderView('empresa','index',['empresas' => $empresas],'default');
     }
 
     public function show($id)

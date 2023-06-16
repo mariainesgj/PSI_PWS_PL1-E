@@ -6,7 +6,7 @@ class IvaController extends Controller
     public function index()
     {
         $ivas = Iva::all();
-        $this->renderView('iva','index',['iva' => $ivas],'default');
+        $this->renderView('iva','index',['ivas' => $ivas],'default');
     }
 
     public function show($id)
