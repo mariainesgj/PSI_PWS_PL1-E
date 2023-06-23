@@ -4,6 +4,11 @@ require_once 'controllers/Controller.php';
 
 class FOController extends Controller
 {
+    public function __construct()
+    {
+        $roles = ['cliente'];
+        $this->authenticationFilterAllows($roles);
+    }
     public function index()
     {
         $this->renderView('fo', 'index', [], 'FO');

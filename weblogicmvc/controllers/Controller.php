@@ -28,16 +28,7 @@ class Controller
     {
         extract($data);
         $viewPath = 'views/' . $controllerPrefix . '/' . $viewName . '.php';
-
-        // Verificar se a vista é "bo" (admin/funcionário) ou "fo" (cliente)
-        if ($controllerPrefix === 'bo') {
-            $layoutPath = 'views/layout/default.php';
-        } elseif ($controllerPrefix === 'fo') {
-            $layoutPath = 'views/layout/FO.php';
-        } else {
-            $layoutPath = 'views/layout/' . $layout . '.php';
-        }
-
+        $layoutPath = 'views/layout/' . $layout . '.php';
         require_once($layoutPath);
     }
 
@@ -74,6 +65,8 @@ class Controller
     protected function authenticationFilter()
     {
         $auth = new Auth();
+        $auth = getUserRole();
+        $this -> authenticationFilterAllows($auth);
         if(!$auth->IsLoggedIn()) {
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }

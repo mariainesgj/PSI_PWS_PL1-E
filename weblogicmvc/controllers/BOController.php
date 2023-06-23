@@ -3,11 +3,18 @@ require_once 'controllers/Controller.php';
 
 class BOController extends Controller
 {
+
+    public function __construct()
+    {
+        $roles = ['admin', 'funcionario'];
+        $this->authenticationFilterAllows($roles);
+    }
+
     public function index()
     {
         $this->renderView('bo', 'index', [], 'default');
     }
-
+/*
     public function dashboard()
     {
         $this->renderView('bo', 'index', [], 'default');
@@ -46,6 +53,6 @@ class BOController extends Controller
     public function empresa()
     {
         $this->renderView('empresa', 'index', [], 'default');
-    }
+    }*/
 }
 ?>
