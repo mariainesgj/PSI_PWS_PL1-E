@@ -9,13 +9,15 @@ Perfil Funcionário
 - Registo de Clientes: Os funcionários podem cadastrar novos clientes.
 - Gestão de Serviços: Os funcionários podem gerir os serviços oferecidos pela empresa.
 - Gestão de Taxas de IVA: Os funcionários podem gerir as taxas de IVA aplicáveis.
-- Histórico de Folhas de Obra: Os funcionários podem visualizar o histórico de folhas de obra geradas anteriormente. <br>
-<br> Perfil Administrador
+- Histórico de Folhas de Obra: Os funcionários podem visualizar o histórico de folhas de obra geradas anteriormente.
+
+Perfil Administrador
 - Autenticação: Os administradores podem fazer login para aceder à sua área reservada.
 - Gestão de Funcionários: Os administradores podem criar e gerir contas de funcionários.
 - Configuração da Empresa: Os administradores podem configurar os dados da empresa para a emissão de folhas de obra.
 - Histórico de Folhas de Obra: Os administradores podem visualizar o histórico de todas as folhas de obra geradas pelos funcionários.
 - Todas as funcionalidades disponíveis para funcionários.
+
 Perfil Cliente
 - Autenticação: Os clientes podem fazer login para aceder à sua área reservada.
 - Lista de Folhas de Obra: Os clientes podem visualizar a sua lista de folhas de obra, indicando claramente as pagas e as pendentes.
@@ -29,15 +31,17 @@ Perfil Cliente
 - Composer (para gerir dependências)
 
 ## Instalação
-
+1. Clone o repositório do projeto do GitHub.
+2. Certifique-se de ter o servidor web (por exemplo, Apache) configurado e apontando para o diretório público do projeto.
+3. No terminal, navegue até o diretório do projeto e execute o comando composer install para instalar as dependências.
 
 ## Utilização
 1. Acesse a aplicação através da URL fornecida.
 2. Dependendo do seu perfil (funcionário, administrador ou cliente), faça login usando as credenciais adequadas.
 3. Explore as funcionalidades disponíveis com base no seu perfil:
-  - Funcionários podem gerar folhas de obra, gerir clientes, serviços e taxas de IVA, e visualizar o histórico de folhas de obra.
-  - Administradores têm acesso adicional para gerir funcionários e configurar a empresa.
-  - Clientes podem visualizar a lista das suas folhas de obra, simular pagamentos e imprimir folhas de obra.
+    - Funcionários podem gerar folhas de obra, gerir clientes, serviços e taxas de IVA, e visualizar o histórico de folhas de obra.
+    - Administradores têm acesso adicional para gerir funcionários e configurar a empresa.
+    - Clientes podem visualizar a lista das suas folhas de obra, simular pagamentos e imprimir folhas de obra.
 4. Siga a interface intuitiva da aplicação para realizar as ações desejadas e navegar pelas diferentes seções.
 5. Certifique-se de fazer logout quando terminar de usar a aplicação para garantir a segurança da sua conta.
 
