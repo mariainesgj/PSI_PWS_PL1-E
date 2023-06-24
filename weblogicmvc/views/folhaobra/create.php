@@ -34,9 +34,7 @@
                         <div class="col-12">
                             <h4>
                                 <i class="fas fa-globe"></i> AdminLTE, Inc.
-                                <?php foreach ($folhaobras as $folhaobra) { ?>
-                                    <small class="float-right"><?= date('d-m-Y', strtotime($folhaobra->data)) ?></small>
-                                <?php } ?>
+                                    <small class="float-right"><?= date('d-m-Y') ?></small>
                             </h4>
                         </div>
                         <!-- /.col -->
@@ -46,7 +44,6 @@
                         <div class="col-sm-4 invoice-col">
                             From
                             <address>
-                                <?php foreach ($empresas as $empresa) { ?>
                                     <tr>
                                         <strong><td><?=$empresa->designacaosocial?></td></strong><br>
                                         <td><?=$empresa->morada?></td>
@@ -55,7 +52,6 @@
                                         Telefone: <td><?=$empresa->telefone?></td><br>
                                         Email: <td><?=$empresa->email?></td>
                                     </tr>
-                                <?php } ?>
                             </address>
                         </div>
                         <!-- /.col -->
@@ -63,7 +59,7 @@
                             To
                             <address>
                                 <strong>Cliente</strong>
-                                <button onclick="window.location.href='index.php?c=folhaobra&a=selectcliente'">Select Cliente</button>
+                                <a href="index.php?c=folhaobra&a=selectcliente" class="btn btn-info" role="button">Selecionar Cliente</a>
                             </address>
                         </div>
                         <!-- /.col -->

@@ -4,6 +4,11 @@ require_once 'controllers/Controller.php';
 
 class LinhaObraController extends Controller
 {
+    public function __construct()
+    {
+        $roles = ['admin', 'funcionario'];
+        $this->authenticationFilterAllows($roles);
+    }
     public function index($id)
     {
         $linhasobras = Linhaobra::All([$id]);
@@ -25,7 +30,12 @@ class LinhaObraController extends Controller
     public function selectservico()
     {
         $servicos = Servico::all();
-        $this->renderView('linhaobra', 'selectServico', ['servicos' => $servicos]);
+
+        if (is_null($servicos)) {
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
+        } else {
+            $this->renderView('linhaobras', 'selectservico', ['servicos'=>$servicos, 'idfolhaobra' => $idfolhaobra, 'idcliente' => $idcliente]);
+        }
     }
 
     public function create()

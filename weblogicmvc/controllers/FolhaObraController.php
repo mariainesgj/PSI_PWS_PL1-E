@@ -6,14 +6,16 @@ require_once 'controllers/Controller.php';
 
 class FolhaObraController extends Controller
 {
+    public function __construct()
+    {
+        $roles = ['admin', 'funcionario','cliente'];
+        $this->authenticationFilterAllows($roles);
+    }
     public function index()
     {
-        $folhaobras = Folhaobra::all();
-        $empresas = Empresa::all();
-        $users = User::all();
-        $linhaobras = Linhaobra::all();
-        $this->renderView('folhaobra','index',['folhaobras' => $folhaobras, 'empresas' => $empresas, 'users' => $users,
-            'linhaobras' => $linhaobras],'default');
+        $folhasobras = FolhaObra::all();
+        //mostrar a vista index passando os dados por parâmetro
+        $this->renderView('folhaobra', 'index', ['folhasobras'=>$folhasobras]);
     }
 
     public function show($id)
@@ -29,23 +31,45 @@ class FolhaObraController extends Controller
 
     public function selectcliente()
     {
-        $clientes = User::where('role', 'cliente')->get();
-        $this->renderView('folhaobra', 'selectCliente', ['clientes' => $clientes]);
+        $users = User::find_all_by_role('cliente');
+        if (is_null($users)) {
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
+        } else {
+            $this->renderView('folhaobra', 'selectcliente', ['users'=>$users]);
+        }
     }
 
     public function create()
     {
-        $this->renderView('folhaobra', 'create');
+        $empresas = Empresa::all();
+        if(count($empresas) > 0) {
+            $empresa = $empresas[0];
+            $linhaobras = LinhaObra::all();
+            $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'linhaobras'=>$linhaobras]);
+        }
     }
 
     public function store($id_cliente)
     {
-        $folhaobra = new Folhaobra ($_POST);
-        if($folhaobra->is_valid($id_cliente)){
+        $auth = new Auth();
+        $folhaobra = new Folhaobra($_POST);
+        $folhaobra->data = date('d-m-Y');
+        $folhaobra->valortotal = 0;
+        $folhaobra->ivatotal = 0;
+        $folhaobra->estado = 'em lancamento';
+        $folhaobra->id_cliente = $id_cliente;
+        $folhaobra->id_funcionario = $auth->getUserId();
+
+        if ($folhaobra->is_valid()) {
             $folhaobra->save($id_cliente);
-            $this->redirectToRoute('folhaobra','index');
-        }else{
-            $this->renderView('folhaobra','create',['folhaobra'=> $folhaobra]);
+            $this->redirectToRoute('folhaobra', 'index');
+        } else {
+            $empresas = Empresa::all();
+            if (count($empresas) > 0) {
+                $empresa = $empresas[0];
+                $linhasobras = LinhaObra::all();
+                $this->renderView('folhaobra', 'create', ['empresa' => $empresa, 'linhasobras' => $linhasobras, 'folhaobras' => $folhaobra]);
+            }
         }
     }
 
@@ -53,7 +77,7 @@ class FolhaObraController extends Controller
     {
         $folhaobra = Folhaobra::find($id);
         if(is_null($folhaobra)){
-            //To do redirect error
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }else{
             $this->renderView('folhaobra','edit',['folhaobra'=> $folhaobra]);
         }

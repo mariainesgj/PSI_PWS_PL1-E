@@ -3,6 +3,13 @@ require_once 'controllers/Controller.php';
 
 class EmpresaController extends Controller
 {
+
+    public function __construct()
+    {
+        $roles = ['admin'];
+        $this->authenticationFilterAllows($roles);
+    }
+
     public function index()
     {
         $empresas = Empresa::all();

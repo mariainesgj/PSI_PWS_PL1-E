@@ -3,6 +3,11 @@ require_once 'controllers/Controller.php';
 
 class IvaController extends Controller
 {
+    public function __construct()
+    {
+        $roles = ['admin', 'funcionario'];
+        $this->authenticationFilterAllows($roles);
+    }
     public function index()
     {
         $ivas = Iva::all();

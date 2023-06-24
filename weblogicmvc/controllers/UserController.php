@@ -4,6 +4,11 @@ require_once 'controllers/Controller.php';
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $roles = ['admin', 'funcionario'];
+        $this->authenticationFilterAllows($roles);
+    }
     public function index()
     {
         $users = User::all();
