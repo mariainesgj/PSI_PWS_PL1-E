@@ -21,7 +21,7 @@ class IvaController extends Controller
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }
         else{
-            $this->renderView('iva', 'show', ['iva'=>$ivas]);
+            $this->renderView('iva', 'show', ['iva' => $ivas]);
         }
     }
 
@@ -53,7 +53,7 @@ class IvaController extends Controller
 
     public function update($id)
     {
-        $ivas = Empresa::find($id);
+        $ivas = Iva::find($id);
         $ivas->update_attributes($_POST);
         if($ivas->is_valid()){
             $this->redirectToRoute('iva','index');
@@ -64,7 +64,7 @@ class IvaController extends Controller
 
     public function delete($id)
     {
-        $ivas = Empresa::find($id);
+        $ivas = Iva::find($id);
         $ivas->delete();
         $this->redirectToRoute('iva','index');
     }

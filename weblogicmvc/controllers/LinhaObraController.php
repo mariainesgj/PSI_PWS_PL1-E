@@ -9,21 +9,19 @@ class LinhaObraController extends Controller
         $roles = ['admin', 'funcionario'];
         $this->authenticationFilterAllows($roles);
     }
-    public function index($id)
+    public function index($id_folhaobra)
     {
-        $linhasobras = Linhaobra::All([$id]);
-        $this->renderView('linhaobra', 'index' , ['linhaobras' => $linhasobras] , 'default');
+        $linhaobras = LinhaObra::find($id_folhaobra);
+        $this->renderView('linhaobra', 'index', ['linhaobras'=>$linhaobras]);
     }
 
     public function show($id)
     {
-    $linhasobras = Linhaobra::find([$id]);
-        if (is_null($linhasobras))
-        {
+        $linhaobras = LinhaObra::find($id);
+        if (is_null($linhaobras)) {
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
-        }
-        else {
-            $this->renderView('linhaobra' , 'show' , ['linhas' => $linhasobras] );
+        } else {
+            $this->renderView('linhaobra', 'show', ['linhaobra'=>$linhaobras]);
         }
     }
 
@@ -34,7 +32,7 @@ class LinhaObraController extends Controller
         if (is_null($servicos)) {
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         } else {
-            $this->renderView('linhaobras', 'selectservico', ['servicos'=>$servicos, 'idfolhaobra' => $idfolhaobra, 'idcliente' => $idcliente]);
+            $this->renderView('linhaobras', 'selectservico', ['servicos'=>$servicos, 'idf_olhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente]);
         }
     }
 

@@ -6,13 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>User Create</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="index.php?c=home&a=index">Home</a></li>
-                        <li class="breadcrumb-item active">Iva Create</li>
-                    </ol>
+                    <h1>Iva Create</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -23,7 +17,7 @@
         <div class="col-md-6">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">IVA</h3>
+                    <h3 class="card-title">Iva</h3>
                 </div>
                 <form action="index.php?c=iva&a=store" method="POST" class="container">
                     <div class="card-body">
@@ -37,16 +31,19 @@
                         </div>
                         <div class="mb-3">
                             <label for="vigor" class="form-label">Em Vigor:</label>
-                            <input type="text" class="form-control" id="vigor" name="vigor">
+                            <select id="vigor" name="vigor" class="form-control">
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="float-left">
-                                <a href="index.php?c=iva&a=index" class="btn btn-secondary">Cancel</a>
+                                <a href="index.php?c=iva&a=index" class="btn btn-secondary">Cancelar</a>
                             </div>
                             <div class="float-right">
-                                <input type="submit" value="Create new IVA" class="btn btn-success">
+                                <input type="submit" value="Criar IVA" class="btn btn-success">
                             </div>
                         </div>
                     </div>

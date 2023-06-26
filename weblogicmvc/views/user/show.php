@@ -112,7 +112,7 @@
     <!-- /.content -->
     <div class="row">
         <div class="col-12 text-left">
-            <a href="index.php?c=user&a=index" class="btn btn-secondary">Cancel</a>
+            <a href="index.php?c=user&a=index" class="btn btn-secondary">Voltar</a>
         </div>
     </div>
 </div>

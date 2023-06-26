@@ -11,12 +11,12 @@ class FolhaObraController extends Controller
         $roles = ['admin', 'funcionario','cliente'];
         $this->authenticationFilterAllows($roles);
     }
-    public function index()
+    /*public function index()
     {
         $folhasobras = FolhaObra::all();
         //mostrar a vista index passando os dados por parâmetro
         $this->renderView('folhaobra', 'index', ['folhasobras'=>$folhasobras]);
-    }
+    }*/
 
     public function show($id)
     {
@@ -44,7 +44,7 @@ class FolhaObraController extends Controller
         $empresas = Empresa::all();
         if(count($empresas) > 0) {
             $empresa = $empresas[0];
-            $linhaobras = LinhaObra::all();
+            $linhaobras = Linhaobra::all();
             $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'linhaobras'=>$linhaobras]);
         }
     }
@@ -67,8 +67,8 @@ class FolhaObraController extends Controller
             $empresas = Empresa::all();
             if (count($empresas) > 0) {
                 $empresa = $empresas[0];
-                $linhasobras = LinhaObra::all();
-                $this->renderView('folhaobra', 'create', ['empresa' => $empresa, 'linhasobras' => $linhasobras, 'folhaobras' => $folhaobra]);
+                $linhaobras = Linhaobra::all();
+                $this->renderView('folhaobra', 'create', ['empresa' => $empresa, 'linhaobras' => $linhaobras, 'folhaobras' => $folhaobra]);
             }
         }
     }

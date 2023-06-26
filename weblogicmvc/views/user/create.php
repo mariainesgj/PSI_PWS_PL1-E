@@ -75,10 +75,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="float-left">
-                                        <a href="index.php?c=user&a=index" class="btn btn-secondary">Cancel</a>
+                                        <a href="index.php?c=user&a=index" class="btn btn-secondary">Cancelar</a>
                                     </div>
                                     <div class="float-right">
-                                        <input type="submit" value="Create new User" class="btn btn-success">
+                                        <input type="submit" value="Criar User" class="btn btn-success">
                                     </div>
                                 </div>
                             </div>

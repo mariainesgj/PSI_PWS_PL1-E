@@ -129,7 +129,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=folhaobra&a=index" class="nav-link">
+                        <a href="index.php?c=linhaobra&a=index" class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
                                 FO Emitidas
