@@ -46,30 +46,20 @@
                         <div class="col-sm-4 invoice-col">
                             To
                             <address>
-<<<<<<< HEAD
                                 <strong><?=$cliente->username?></strong><br>
                                 <td><?=$cliente->morada?></td>
                                 <td><?=$cliente->codpostal?></td>
                                 <td><?=$cliente->localidade?></td><br>
                                 Telefone: <td><?=$cliente->telefone?></td><br>
                                 Email: <td><?=$cliente->email?></td>
-=======
-                                <strong>Cliente</strong>
-                                <a href="index.php?c=folhaobra&a=selectcliente" class="btn btn-info" role="button">Selecionar Cliente</a>
->>>>>>> main
                             </address>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
                             <b>Invoice #007612</b><br>
                             <br>
-<<<<<<< HEAD
                                 <b>Folha Obra ID: </b><?=$id_folhaobra?><br>
                                 <b>Data Pagamento: </b><?= date('d-m-Y') ?><br>
-=======
-                                <b>Order ID:</b><?=$folhaobra->id?><br>
-                                <b>Payment Due:</b><?= date('d-m-Y') ?><br>
->>>>>>> main
                         </div>
                         <!-- /.col -->
                     </div>
@@ -82,17 +72,11 @@
                                 <thead>
                                 <tr>
                                     <th>Referência</th>
-<<<<<<< HEAD
                                     <th>Descrição</th>
-=======
->>>>>>> main
                                     <th>Quantidade</th>
                                     <th>Preço/Hora</th>
                                     <th>Valor Iva</th>
-<<<<<<< HEAD
                                     <th>Valor Unitário</th>
-=======
->>>>>>> main
                                     <th>Subtotal</th>
                                 </tr>
                                 </thead>
@@ -104,7 +88,6 @@
                                         <td><?=$linhaobra->quantidade?></td>
                                         <td><?=$servico->precohora?></td>
                                         <td><?=$linhaobra->valoriva?></td>
-<<<<<<< HEAD
                                         <td><?=$linhaobra->valorunitario?></td>
                                         <td><?=$subtotal?></td>
                                         <td>
@@ -116,9 +99,6 @@
                                                 <td><button type="submit" class="btn btn-primary">Selecionar</button>
                                             </form>
                                         </td>
-=======
-                                        <td></td>
->>>>>>> main
                                     </tr>
                                 <?php } ?>
                                 </tbody>
@@ -142,11 +122,7 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
-<<<<<<< HEAD
                                         <th>Valor Total:</th>
-=======
-                                        <th style="width:50%">Subtotal:</th>
->>>>>>> main
                                         <td>0€</td>
                                     </tr>
                                     <tr>
@@ -154,15 +130,7 @@
                                         <td>0€</td>
                                     </tr>
                                     <tr>
-<<<<<<< HEAD
                                         <th>Total FO:</th>
-=======
-                                        <th>Valor Total:</th>
-                                        <td>0€</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Total:</th>
->>>>>>> main
                                         <td>0€</td>
                                     </tr>
                                 </table>
@@ -189,5 +157,6 @@
 <!-- /.content-wrapper -->
 </body>
 </html>
+
 
 
