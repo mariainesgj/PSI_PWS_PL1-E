@@ -5,11 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-<<<<<<< HEAD
                 <h1>Empresa Index</h1>
-=======
-                <h1>Empresa</h1>
->>>>>>> main
             </div>
         </div>
     </div><!-- /.container-fluid -->

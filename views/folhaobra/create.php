@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Linha Obra</h1>
+                <h1>Folha Obra</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -22,7 +22,7 @@
                         <div class="col-12">
                             <h4>
                                 <i class="fas fa-globe"></i> FolhaObra
-                                <small class="float-right"><?= date('d-m-Y') ?></small>
+                                    <small class="float-right"><?= date('d-m-Y') ?></small>
                             </h4>
                         </div>
                         <!-- /.col -->
@@ -32,44 +32,32 @@
                         <div class="col-sm-4 invoice-col">
                             From
                             <address>
-                                <tr>
-                                    <strong><td><?=$empresa->designacaosocial?></td></strong><br>
-                                    <td><?=$empresa->morada?></td>
-                                    <td><?=$empresa->codpostal?></td>
-                                    <td><?=$empresa->localidade?></td><br>
-                                    Telefone: <td><?=$empresa->telefone?></td><br>
-                                    Email: <td><?=$empresa->email?></td>
-                                </tr>
+                                    <tr>
+                                        <strong><td><?=$empresa->designacaosocial?></td></strong><br>
+                                        <td><?=$empresa->morada?></td>
+                                        <td><?=$empresa->codpostal?></td>
+                                        <td><?=$empresa->localidade?></td><br>
+                                        Telefone: <td><?=$empresa->telefone?></td><br>
+                                        Email: <td><?=$empresa->email?></td>
+                                    </tr>
                             </address>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
                             To
                             <address>
-<<<<<<< HEAD
-                                <strong><?=$cliente->username?></strong><br>
-                                <td><?=$cliente->morada?></td>
-                                <td><?=$cliente->codpostal?></td>
-                                <td><?=$cliente->localidade?></td><br>
-                                Telefone: <td><?=$cliente->telefone?></td><br>
-                                Email: <td><?=$cliente->email?></td>
-=======
                                 <strong>Cliente</strong>
                                 <a href="index.php?c=folhaobra&a=selectcliente" class="btn btn-info" role="button">Selecionar Cliente</a>
->>>>>>> main
                             </address>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
                             <b>Invoice #007612</b><br>
                             <br>
-<<<<<<< HEAD
-                                <b>Folha Obra ID: </b><?=$id_folhaobra?><br>
-                                <b>Data Pagamento: </b><?= date('d-m-Y') ?><br>
-=======
-                                <b>Order ID:</b><?=$folhaobra->id?><br>
-                                <b>Payment Due:</b><?= date('d-m-Y') ?><br>
->>>>>>> main
+                            <?php foreach ($folhaobras as $folhaobra) { ?>
+                            <b>Order ID:</b><?=$folhaobra->id?><br>
+                            <b>Payment Due:</b><?= date('d-m-Y', strtotime($folhaobra->data)) ?><br>
+                            <?php } ?>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -82,43 +70,20 @@
                                 <thead>
                                 <tr>
                                     <th>Referência</th>
-<<<<<<< HEAD
-                                    <th>Descrição</th>
-=======
->>>>>>> main
                                     <th>Quantidade</th>
-                                    <th>Preço/Hora</th>
-                                    <th>Valor Iva</th>
-<<<<<<< HEAD
                                     <th>Valor Unitário</th>
-=======
->>>>>>> main
+                                    <th>Valor Iva</th>
                                     <th>Subtotal</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php foreach ($linhaobras as $linhaobra) { ?>
                                     <tr>
-                                        <td><?=$servico->referencia?></td>
-                                        <td><?=$servico->descricao?></td>
+                                        <td><?=$linhaobra->id_folhaobra?></td>
                                         <td><?=$linhaobra->quantidade?></td>
-                                        <td><?=$servico->precohora?></td>
-                                        <td><?=$linhaobra->valoriva?></td>
-<<<<<<< HEAD
                                         <td><?=$linhaobra->valorunitario?></td>
-                                        <td><?=$subtotal?></td>
-                                        <td>
-                                            <form action="selectservico.php?c=linhaobra&a=selectservico" method="POST">
-                                                <div class="form-group">
-                                                    <label for="referencia" class="form-label">Referência:</label>
-                                                    <input type="text" class="form-control" id="referencia" name="referencia">
-                                                </div></td>
-                                                <td><button type="submit" class="btn btn-primary">Selecionar</button>
-                                            </form>
-                                        </td>
-=======
+                                        <td><?=$linhaobra->valoriva?></td>
                                         <td></td>
->>>>>>> main
                                     </tr>
                                 <?php } ?>
                                 </tbody>
@@ -139,14 +104,12 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-6">
+                            <p class="lead">Amount Due 2/22/2014</p>
+
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
-<<<<<<< HEAD
-                                        <th>Valor Total:</th>
-=======
                                         <th style="width:50%">Subtotal:</th>
->>>>>>> main
                                         <td>0€</td>
                                     </tr>
                                     <tr>
@@ -154,15 +117,11 @@
                                         <td>0€</td>
                                     </tr>
                                     <tr>
-<<<<<<< HEAD
-                                        <th>Total FO:</th>
-=======
                                         <th>Valor Total:</th>
                                         <td>0€</td>
                                     </tr>
                                     <tr>
                                         <th>Total:</th>
->>>>>>> main
                                         <td>0€</td>
                                     </tr>
                                 </table>
@@ -175,7 +134,9 @@
                     <!-- this row will not appear when printing -->
                     <div class="row no-print">
                         <div class="col-12">
-                            <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submeter
+                            <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                            <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                                Payment
                             </button>
                         </div>
                     </div>
@@ -189,5 +150,3 @@
 <!-- /.content-wrapper -->
 </body>
 </html>
-
-

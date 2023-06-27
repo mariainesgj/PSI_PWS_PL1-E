@@ -11,15 +11,8 @@ class LinhaObraController extends Controller
     }
     public function index($id_folhaobra)
     {
-<<<<<<< HEAD
-        $folhaobras = FolhaObra::find($id_folhaobra);
-        $linhaobras = LinhaObra::find($id_folhaobra);
-        $clienteid = $folhaobras->id_cliente;
-        $this->renderView('linhaobra', 'index', ['linhaobras'=>$linhaobras, 'id_folhaobra' => $id_folhaobra, 'clienteid' => $clienteid]);
-=======
         $linhaobras = LinhaObra::find($id_folhaobra);
         $this->renderView('linhaobra', 'index', ['linhaobras'=>$linhaobras]);
->>>>>>> main
     }
 
     public function show($id)
@@ -32,21 +25,14 @@ class LinhaObraController extends Controller
         }
     }
 
-    public function selectservico($id_folhaobra, $id_cliente)
+    public function selectservico()
     {
-        $referencia = $_POST['referencia'];
-        $servicos = Servico::find_by_referencia($referencia);
-        $cliente = User::find($id_cliente);
+        $servicos = Servico::all();
 
         if (is_null($servicos)) {
-            $servicos_all = Servico::all();
-            $this->renderView('linhaobra', 'selectservico', ['servicos'=>$servicos_all, 'id_folhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente, 'cliente' => $cliente]);
+            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         } else {
-<<<<<<< HEAD
-            $this->redirectToRoute('linhaobra', 'store', ['id_servico' => $servicos->id, 'id_folhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente]);
-=======
-            $this->renderView('linhaobras', 'selectservico', ['servicos'=>$servicos, 'idf_olhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente]);
->>>>>>> main
+            $this->renderView('linhaobras', 'selectservico', ['servicos'=>$servicos, 'id_folhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente]);
         }
     }
 
@@ -54,7 +40,7 @@ class LinhaObraController extends Controller
     {
         $folhaobra = Folhaobra::all();
         $servico = Servico::all();
-        $this->renderView('linhaobra', 'create',['servicos'=>$servico,'folhaobras'=>$folhaobra]);
+        $this->renderView('linhaobra', 'create',['servico'=>$servico,'folhaobra'=>$folhaobra]);
     }
 
     public function store($id_cliente)

@@ -12,13 +12,17 @@ class FolhaObraController extends Controller
         $roles = ['admin', 'funcionario','cliente'];
         $this->authenticationFilterAllows($roles);
     }
+<<<<<<< HEAD
 
     public function index()
+=======
+    /*public function index()
+>>>>>>> main
     {
         $folhasobras = FolhaObra::all();
         //mostrar a vista index passando os dados por parâmetro
         $this->renderView('folhaobra', 'index', ['folhasobras'=>$folhasobras]);
-    }
+    }*/
 
     public function show($id)
     {
@@ -66,6 +70,7 @@ class FolhaObraController extends Controller
         if(count($empresas) > 0) {
             $empresa = $empresas[0];
             $linhaobras = Linhaobra::all();
+<<<<<<< HEAD
             $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'id_folhaobra' => null,'linhaobras'=>$linhaobras]);
         }
     }
@@ -92,6 +97,9 @@ class FolhaObraController extends Controller
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         } else {
             $this->renderView('folhaobra', 'imprimirfo', ['folhaobras'=>[$folhaobra], 'idfolhaobra' => $id, 'cliente' => $cliente], 'FO');
+=======
+            $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'linhaobras'=>$linhaobras]);
+>>>>>>> main
         }
     }
 
@@ -112,11 +120,16 @@ class FolhaObraController extends Controller
 
             if (count($empresas) > 0) {
                 $empresa = $empresas[0];
+<<<<<<< HEAD
                 $folhaobra->save();
                 $linhaobras = [];
                 $this->renderView('linhaobra', 'index', ['cliente' => $user, 'id_folhaobra' => $folhaobra->id, 'empresa' => $empresa, 'linhaobras' => $linhaobras]);
             } else {
                 echo "Não há empresas disponíveis.";
+=======
+                $linhaobras = Linhaobra::all();
+                $this->renderView('folhaobra', 'create', ['empresa' => $empresa, 'linhaobras' => $linhaobras, 'folhaobras' => $folhaobra]);
+>>>>>>> main
             }
         } else {
             $this->redirectToRoute('folhaobra', 'create');

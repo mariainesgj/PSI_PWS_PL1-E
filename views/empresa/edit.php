@@ -8,15 +8,6 @@
                 <div class="col-sm-6">
                     <h1>Empresa Create</h1>
                 </div>
-<<<<<<< HEAD
-=======
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="index.php?c=home&a=index">Home</a></li>
-                        <li class="breadcrumb-item active">Empresa Create</li>
-                    </ol>
-                </div>
->>>>>>> main
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -28,39 +19,39 @@
                     <div class="card-header">
                         <h3 class="card-title">Empresa</h3>
                     </div>
-                    <form action="index.php?c=empresa&a=store" method="POST" class="container">
+                    <form action="index.php?c=empresa&a=update&id=<?=$empresa->id?>" method="POST" class="container">
                         <div class="card-body">
                             <div class="mb-3">
                                 <label for="designacaosocial" class="form-label">Designação Social: </label>
-                                <input type="text" class="form-control" id="designacaosocail" name="designacaosocial">
+                                <input type="text" class="form-control" id="designacaosocail" name="designacaosocial" value="<?=$empresa->designacaosocial?>">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email: </label>
-                                <input type="text" class="form-control" id="email" name="email">
+                                <input type="text" class="form-control" id="email" name="email" value="<?=$empresa->email?>">
                             </div>
                             <div class="mb-3">
                                 <label for="telefone" class="form-label">Telefone:</label>
-                                <input type="text" class="form-control" id="telefone" name="telefone">
+                                <input type="text" class="form-control" id="telefone" name="telefone" value="<?=$empresa->telefone?>">
                             </div>
                             <div class="mb-3">
                                 <label for="nif" class="form-label">NIF: </label>
-                                <input type="text" class="form-control" id="nif" name="nif">
+                                <input type="text" class="form-control" id="nif" name="nif" value="<?=$empresa->nif?>">
                             </div>
                             <div class="mb-3">
                                 <label for="morada" class="form-label">Morada: </label>
-                                <input type="text" class="form-control" id="morada" name="morada">
+                                <input type="text" class="form-control" id="morada" name="morada" value="<?=$empresa->morada?>">
                             </div>
                             <div class="mb-3">
                                 <label for="codpostal" class="form-label">Código-Postal: </label>
-                                <input type="text" class="form-control" id="codpostal" name="codpostal">
+                                <input type="text" class="form-control" id="codpostal" name="codpostal" value="<?=$empresa->codpostal?>">
                             </div>
                             <div class="mb-3">
                                 <label for="localidade" class="form-label">Localidade: </label>
-                                <input type="text" class="form-control" id="localidade" name="localidade">
+                                <input type="text" class="form-control" id="localidade" name="localidade" value="<?=$empresa->localidade?>">
                             </div>
                             <div class="mb-3">
                                 <label for="capitalsocial" class="form-label">Capital Social:</label>
-                                <input type="text" class="form-control" id="capitalsocial" name="capitalsocial">
+                                <input type="text" class="form-control" id="capitalsocial" name="capitalsocial" value="<?=$empresa->capitalsocial?>">
                             </div>
                         </div>
                         <div class="row">
@@ -69,7 +60,7 @@
                                     <a href="index.php?c=empresa&a=index" class="btn btn-secondary">Cancelar</a>
                                 </div>
                                 <div class="float-right">
-                                    <input type="submit" value="Criar Empresa" class="btn btn-success">
+                                    <input type="submit" value="Salvar as alterações" class="btn btn-success">
                                 </div>
                             </div>
                         </div>

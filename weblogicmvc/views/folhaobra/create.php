@@ -54,8 +54,15 @@
                         <div class="col-sm-4 invoice-col">
                             <b>Invoice #007612</b><br>
                             <br>
+<<<<<<< HEAD
                                 <b>Folha Obra ID: </b><?=$id_folhaobra?><br>
                                 <b>Data Pagamento: </b><?= date('d-m-Y') ?><br>
+=======
+                            <?php foreach ($folhaobras as $folhaobra) { ?>
+                            <b>Order ID:</b><?=$folhaobra->id?><br>
+                            <b>Payment Due:</b><?= date('d-m-Y', strtotime($folhaobra->data)) ?><br>
+                            <?php } ?>
+>>>>>>> main
                         </div>
                         <!-- /.col -->
                     </div>
@@ -68,16 +75,23 @@
                                 <thead>
                                 <tr>
                                     <th>Referência</th>
+<<<<<<< HEAD
                                     <th>Descrição</th>
+=======
+>>>>>>> main
                                     <th>Quantidade</th>
                                     <th>Preço/Hora</th>
                                     <th>Valor Iva</th>
+<<<<<<< HEAD
                                     <th>Valor Unitário</th>
+=======
+>>>>>>> main
                                     <th>Subtotal</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+<<<<<<< HEAD
                                         <td>vazio</td>
                                         <td>vazio</td>
                                         <td>vazio</td>
@@ -85,6 +99,13 @@
                                         <td>vazio</td>
                                         <td>vazio</td>
                                         <td>vazio</td>
+=======
+                                        <td><?=$linhaobra->id_folhaobra?></td>
+                                        <td><?=$linhaobra->quantidade?></td>
+                                        <td><?=$linhaobra->valorunitario?></td>
+                                        <td><?=$linhaobra->valoriva?></td>
+                                        <td></td>
+>>>>>>> main
                                     </tr>
                                 </tbody>
                             </table>
@@ -107,6 +128,13 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
+<<<<<<< HEAD
+=======
+                                        <th style="width:50%">Subtotal:</th>
+                                        <td>0€</td>
+                                    </tr>
+                                    <tr>
+>>>>>>> main
                                         <th>Iva Total:</th>
                                         <td>0€</td>
                                     </tr>

@@ -8,15 +8,6 @@
                 <div class="col-sm-6">
                     <h1>Empresa Create</h1>
                 </div>
-<<<<<<< HEAD
-=======
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="index.php?c=home&a=index">Home</a></li>
-                        <li class="breadcrumb-item active">Empresa Create</li>
-                    </ol>
-                </div>
->>>>>>> main
             </div>
         </div><!-- /.container-fluid -->
     </section>

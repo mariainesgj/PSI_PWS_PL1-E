@@ -7,11 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-<<<<<<< HEAD
                     <h1>Iva Show</h1>
-=======
-                    <h1>User Show</h1>
->>>>>>> main
                 </div>
             </div>
         </div><!-- /.container-fluid -->
