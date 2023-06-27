@@ -5,13 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>User</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="index.php?c=home&a=index">Home</a></li>
-                    <li class="breadcrumb-item active">User</li>
-                </ol>
+                <h1>User Index</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -106,7 +100,7 @@
 <!-- /.content -->
 
 <div class="col-sm-6">
-    <h3>Create a new User</h3>
+    <h3>Criar um novo User</h3>
     <p>
         <a href="index.php?c=user&a=create" class="btn btn-info"
            role="button">New</a>

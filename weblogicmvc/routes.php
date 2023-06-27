@@ -73,7 +73,7 @@ return [
         'show' => ['GET','FolhaObraController','show'],
         'selectcliente' => ['GET','FolhaObraController','selectcliente'],
         'create' => ['GET','FolhaObraController','create'],
-        'store' => ['POST','FolhaObraController','store'],
+        'store' => ['GET','FolhaObraController','store'],
         'edit' => ['GET','FolhaObraController','edit'],
         'update' => ['POST','FolhaObraController','update'],
         'delete' => ['GET','FolhaObraController','delete'],

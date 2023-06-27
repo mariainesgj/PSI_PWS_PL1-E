@@ -9,32 +9,35 @@ class LinhaObraController extends Controller
         $roles = ['admin', 'funcionario'];
         $this->authenticationFilterAllows($roles);
     }
-    public function index($id)
+    public function index($id_folhaobra)
     {
-        $linhasobras = Linhaobra::All([$id]);
-        $this->renderView('linhaobra', 'index' , ['linhaobras' => $linhasobras] , 'default');
+        $folhaobras = FolhaObra::find($id_folhaobra);
+        $linhaobras = LinhaObra::find($id_folhaobra);
+        $clienteid = $folhaobras->id_cliente;
+        $this->renderView('linhaobra', 'index', ['linhaobras'=>$linhaobras, 'id_folhaobra' => $id_folhaobra, 'clienteid' => $clienteid]);
     }
 
     public function show($id)
     {
-    $linhasobras = Linhaobra::find([$id]);
-        if (is_null($linhasobras))
-        {
+        $linhaobras = LinhaObra::find($id);
+        if (is_null($linhaobras)) {
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
-        }
-        else {
-            $this->renderView('linhaobra' , 'show' , ['linhas' => $linhasobras] );
+        } else {
+            $this->renderView('linhaobra', 'show', ['linhaobra'=>$linhaobras]);
         }
     }
 
-    public function selectservico()
+    public function selectservico($id_folhaobra, $id_cliente)
     {
-        $servicos = Servico::all();
+        $referencia = $_POST['referencia'];
+        $servicos = Servico::find_by_referencia($referencia);
+        $cliente = User::find($id_cliente);
 
         if (is_null($servicos)) {
-            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
+            $servicos_all = Servico::all();
+            $this->renderView('linhaobra', 'selectservico', ['servicos'=>$servicos_all, 'id_folhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente, 'cliente' => $cliente]);
         } else {
-            $this->renderView('linhaobras', 'selectservico', ['servicos'=>$servicos, 'idfolhaobra' => $idfolhaobra, 'idcliente' => $idcliente]);
+            $this->redirectToRoute('linhaobra', 'store', ['id_servico' => $servicos->id, 'id_folhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente]);
         }
     }
 
@@ -42,7 +45,7 @@ class LinhaObraController extends Controller
     {
         $folhaobra = Folhaobra::all();
         $servico = Servico::all();
-        $this->renderView('linhaobra', 'create',['servico'=>$servico,'folhaobra'=>$folhaobra]);
+        $this->renderView('linhaobra', 'create',['servicos'=>$servico,'folhaobras'=>$folhaobra]);
     }
 
     public function store($id_cliente)

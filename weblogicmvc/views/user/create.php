@@ -9,12 +9,6 @@
                 <div class="col-sm-6">
                     <h1>User Create</h1>
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="index.php?c=home&a=index">Home</a></li>
-                        <li class="breadcrumb-item active">User Create</li>
-                    </ol>
-                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -75,10 +69,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="float-left">
-                                        <a href="index.php?c=user&a=index" class="btn btn-secondary">Cancel</a>
+                                        <a href="index.php?c=user&a=index" class="btn btn-secondary">Cancelar</a>
                                     </div>
                                     <div class="float-right">
-                                        <input type="submit" value="Create new User" class="btn btn-success">
+                                        <input type="submit" value="Criar User" class="btn btn-success">
                                     </div>
                                 </div>
                             </div>

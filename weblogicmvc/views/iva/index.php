@@ -5,13 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Iva</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="index.php?c=empresa&a=index">Home</a></li>
-                    <li class="breadcrumb-item active">IVA</li>
-                </ol>
+                <h1>Iva Index</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -24,24 +18,21 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Iva</h3>
-
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-            </div>
         </div>
         <div class="card-body p-0">
             <table class="table table-striped projects">
                 <thead>
                 <tr>
-                    <th style="width: 1%">
+                    <th style="width: 20%">
+                        Id
+                    </th>
+                    <th style="width: 20%">
                         Percentagem do IVA
                     </th>
-                    <th style="width: 8%">
+                    <th style="width: 20%">
                         Descrição
                     </th>
-                    <th style="width: 8%">
+                    <th style="width: 20%">
                         Em vigor
                     </th>
                 </tr>
@@ -49,6 +40,7 @@
                 <tbody>
                 <?php foreach ($ivas as $iva) { ?>
                     <tr>
+                        <td><?=$iva->id?></td>
                         <td><?=$iva->percentagem?></td>
                         <td><?=$iva->descricao?></td>
                         <td><?=$iva->vigor?></td>
@@ -81,7 +73,7 @@
 <!-- /.content -->
 
 <div class="col-sm-6">
-    <h3>Criar nova taxa</h3>
+    <h3>Criar novo Iva</h3>
     <p>
         <a href="index.php?c=iva&a=create" class="btn btn-info"
            role="button">New</a>

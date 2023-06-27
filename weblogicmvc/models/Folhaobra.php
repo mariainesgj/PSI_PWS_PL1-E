@@ -1,9 +1,9 @@
 <?php
 class Folhaobra extends \ActiveRecord\Model
 {
-    static $has_many = array(
-        array('linhaobras'),
-        array('servicos','through' => 'linhaobras')
+    static $belongs_to = array(
+        array('empresa'),
+        array('cliente', 'class_name'=>'user', 'foreign_key'=> 'id_cliente')
     );
 
     public function atualizartotais()

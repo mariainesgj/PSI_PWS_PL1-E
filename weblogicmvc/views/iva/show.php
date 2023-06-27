@@ -1,37 +1,67 @@
-<div style="text-align: center; border-style: ridge;">
-    <h2 class="text-left top-space">IVA Show</h2>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <table class="table tablestriped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Percentagem de Iva</th>
-                <th>Descrição</th>
-                <th>Vigor</th>
-                <th>Permissões</th>
-            </tr>
-            </thead>
+<html>
+<body>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Iva Show</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-            <tbody>
-            <tr>
-                <td><?=$iva->id?></td>
-                <td><?=$iva->percentagem?></td>
-                <td><?=$iva->descricao?></td>
-                <td><?=$iva->vigor?></td>
-                <td>
-                    <a href="index.php?c=iva&a=edit&id=<?=$iva->id ?>"
-                       class="btn btn-info" role="button">Editar</a>
-                </td>
-            </tr>
-            </tbody>
-            <tr>
-                <td>
-                    <a href="router.php?c=iva&a=create" class="btn btn-info" role="button">Criar</a>
-                </td>
-            </tr>
-        </table>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Iva</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Percentagem</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$iva->percentagem?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Descrição</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$iva->descricao?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Vigor</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$iva->vigor?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+    </section>
+    <!-- /.content -->
+    <div class="row">
+        <div class="col-12 text-left">
+            <a href="index.php?c=iva&a=index" class="btn btn-secondary">Voltar</a>
+        </div>
     </div>
 </div>
-</div>
+<!-- /.content-wrapper -->
+</body>
+</html>

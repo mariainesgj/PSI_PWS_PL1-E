@@ -3,7 +3,9 @@ class Auth
 {
     public function __construct()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
     }
 
     public function checkAuth($username, $password)

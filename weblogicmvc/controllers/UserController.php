@@ -44,11 +44,11 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $user = User::find($id);
-        if(is_null($user)){
+        $users = User::find($id);
+        if(is_null($users)){
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }else{
-            $this->renderView('user','edit',['user'=> $user]);
+            $this->renderView('user','edit',['user'=> $users]);
         }
     }
 

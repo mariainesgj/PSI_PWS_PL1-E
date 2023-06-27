@@ -7,12 +7,6 @@
             <div class="col-sm-6">
                 <h1>Folha Obra</h1>
             </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Folha Obra</li>
-                </ol>
-            </div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -21,19 +15,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="callout callout-info">
-                    <h5><i class="fas fa-info"></i> Note:</h5>
-                    This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
-                </div>
-
-
                 <!-- Main content -->
                 <div class="invoice p-3 mb-3">
                     <!-- title row -->
                     <div class="row">
                         <div class="col-12">
                             <h4>
-                                <i class="fas fa-globe"></i> AdminLTE, Inc.
+                                <i class="fas fa-globe"></i> FolhaObra
                                     <small class="float-right"><?= date('d-m-Y') ?></small>
                             </h4>
                         </div>
@@ -66,8 +54,8 @@
                         <div class="col-sm-4 invoice-col">
                             <b>Invoice #007612</b><br>
                             <br>
-                            <b>Order ID:</b> 4F3S8J<br>
-                            <b>Payment Due:</b> 2/22/2014<br>
+                                <b>Folha Obra ID: </b><?=$id_folhaobra?><br>
+                                <b>Data Pagamento: </b><?= date('d-m-Y') ?><br>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -79,21 +67,25 @@
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>Referência</th>
+                                    <th>Descrição</th>
                                     <th>Quantidade</th>
-                                    <th>Valor Unitário</th>
+                                    <th>Preço/Hora</th>
                                     <th>Valor Iva</th>
+                                    <th>Valor Unitário</th>
+                                    <th>Subtotal</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($linhaobras as $linhaobra) { ?>
                                     <tr>
-                                        <td><?=$linhaobra->id_folhaobra?></td>
-                                        <td><?=$linhaobra->quantidade?></td>
-                                        <td><?=$linhaobra->valorunitario?></td>
-                                        <td><?=$linhaobra->valoriva?></td>
+                                        <td>vazio</td>
+                                        <td>vazio</td>
+                                        <td>vazio</td>
+                                        <td>vazio</td>
+                                        <td>vazio</td>
+                                        <td>vazio</td>
+                                        <td>vazio</td>
                                     </tr>
-                                <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -112,25 +104,19 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-6">
-                            <p class="lead">Amount Due 2/22/2014</p>
-
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
-                                        <th style="width:50%">Subtotal:</th>
-                                        <td>$250.30</td>
+                                        <th>Iva Total:</th>
+                                        <td>0€</td>
                                     </tr>
                                     <tr>
-                                        <th>Iva:</th>
-                                        <td>$10.34</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Valor:</th>
-                                        <td>$5.80</td>
+                                        <th>Valor Total:</th>
+                                        <td>0€</td>
                                     </tr>
                                     <tr>
                                         <th>Total:</th>
-                                        <td>$265.24</td>
+                                        <td>0€</td>
                                     </tr>
                                 </table>
                             </div>
@@ -142,9 +128,7 @@
                     <!-- this row will not appear when printing -->
                     <div class="row no-print">
                         <div class="col-12">
-                            <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                            <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-                                Payment
+                            <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submeter
                             </button>
                         </div>
                     </div>
