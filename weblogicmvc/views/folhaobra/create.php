@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Folha Obra</h1>
+                <h1>Emitir Folha Obra</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -132,6 +132,15 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Rodapé -->
+                    <footer class="invoice-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Emissão realizada por: <strong><?= $nomefuncionario ?></strong></p>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
                 <!-- /.invoice -->
             </div><!-- /.col -->

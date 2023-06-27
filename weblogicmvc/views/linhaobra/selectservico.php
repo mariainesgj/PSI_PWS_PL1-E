@@ -55,7 +55,7 @@
                             <div class="row">
                                 <div class="col-md-12 text-right">
                                     <div class="btn-group">
-                                        <a href="index.php?c=folhaobra&a=store&idservico=<?=$servico->id?>&idfolhaobra=<?=$id_folhaobra?>&idcliente=<?=$id_cliente?>"
+                                        <a href="index.php?c=folhaobra&a=store&idservico=<?=$servico->id?>&idfolhaobra=<?=$id_folhaobra?>&idcliente=<?=$cliente?>"
                                            class="btn btn-info" role="button">Selecionar</a>
                                         </a>
                                     </div>

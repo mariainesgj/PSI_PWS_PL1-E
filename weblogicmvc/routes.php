@@ -8,6 +8,7 @@ require_once 'controllers/IvaController.php';
 require_once 'controllers/UserController.php';
 require_once 'controllers/ServicoController.php';
 require_once 'controllers/FolhaObraController.php';
+require_once 'controllers/FolhaObraUserController.php';
 require_once 'controllers/LinhaObraController.php';
 
 return [
@@ -71,8 +72,11 @@ return [
     'folhaobra' =>[
         'index' => ['GET','FolhaObraController','index'],
         'show' => ['GET','FolhaObraController','show'],
+        'showcliente' => ['GET','FolhaObraUserController','showcliente'],
         'selectcliente' => ['GET','FolhaObraController','selectcliente'],
         'create' => ['GET','FolhaObraController','create'],
+        'pagamentofo' => ['GET', 'FolhaObraUserController', 'pagamentofo'],
+        'imprimirfo' => ['GET', 'FolhaObraUserController', 'imprimirfo'],
         'store' => ['GET','FolhaObraController','store'],
         'edit' => ['GET','FolhaObraController','edit'],
         'update' => ['POST','FolhaObraController','update'],

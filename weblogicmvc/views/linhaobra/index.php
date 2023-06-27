@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Linha Obra</h1>
+                <h1>Emitir Folha Obra</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -90,19 +90,26 @@
                                         <td><?=$linhaobra->valoriva?></td>
                                         <td><?=$linhaobra->valorunitario?></td>
                                         <td><?=$subtotal?></td>
-                                        <td>
-                                            <form action="selectservico.php?c=linhaobra&a=selectservico" method="POST">
-                                                <div class="form-group">
-                                                    <label for="referencia" class="form-label">Referência:</label>
-                                                    <input type="text" class="form-control" id="referencia" name="referencia">
-                                                </div></td>
-                                                <td><button type="submit" class="btn btn-primary">Selecionar</button>
-                                            </form>
-                                        </td>
+                                        <?php } ?>
                                     </tr>
-                                <?php } ?>
                                 </tbody>
                             </table>
+                            <div class="row">
+                                <div class="col-12">
+                                    <form action="selectservico.php?c=linhaobra&a=selectservico" method="POST" class="form-horizontal">
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="referencia" name="referencia">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" name="id_folhaobra" value="<?= $id_folhaobra ?>">
+                                                <button type="submit" class="btn btn-info">Selecionar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
                         </div>
                         <!-- /.col -->
                     </div>
@@ -157,6 +164,5 @@
 <!-- /.content-wrapper -->
 </body>
 </html>
-
 
 

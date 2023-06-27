@@ -14,7 +14,7 @@ class BOController extends Controller
     {
         $this->renderView('bo', 'index', [], 'default');
     }
-/*
+
     public function dashboard()
     {
         $this->renderView('bo', 'index', [], 'default');
@@ -53,6 +53,6 @@ class BOController extends Controller
     public function empresa()
     {
         $this->renderView('empresa', 'index', [], 'default');
-    }*/
+    }
 }
 ?>

@@ -35,6 +35,9 @@
                     <th style="width: 20%">
                         Em vigor
                     </th>
+                    <th style="width: 10%">
+                        User Actions
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -73,7 +76,7 @@
 <!-- /.content -->
 
 <div class="col-sm-6">
-    <h3>Criar novo Iva</h3>
+    <h3>Criar um novo Iva</h3>
     <p>
         <a href="index.php?c=iva&a=create" class="btn btn-info"
            role="button">New</a>

@@ -43,7 +43,7 @@
                             <div class="col-12 col-sm-4">
                                 <div class="info-box bg-light">
                                     <div class="info-box-content">
-                                        <span class="info-box-text text-center text-muted">Vigor</span>
+                                        <span class="info-box-text text-center text-muted">Em Vigor</span>
                                         <span class="info-box-number text-center text-muted mb-0"><?=$iva->vigor?></span>
                                     </div>
                                 </div>
@@ -65,3 +65,4 @@
 <!-- /.content-wrapper -->
 </body>
 </html>
+

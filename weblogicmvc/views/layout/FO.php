@@ -121,7 +121,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=linhaobra&a=index" class="nav-link">
+                        <a href="index.php?c=folhaobra&a=index" class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
                                 FO Emitidas
@@ -194,9 +194,7 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="./public/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
+
 <!-- Bootstrap 4 -->
 <script src="./public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->

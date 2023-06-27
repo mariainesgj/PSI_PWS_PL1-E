@@ -15,9 +15,8 @@ class FolhaObraController extends Controller
 
     public function index()
     {
-        $folhasobras = FolhaObra::all();
-        //mostrar a vista index passando os dados por parâmetro
-        $this->renderView('folhaobra', 'index', ['folhasobras'=>$folhasobras]);
+        $folhaobras = FolhaObra::all();
+        $this->renderView('folhaobra', 'index', ['folhaobras'=>$folhaobras]);
     }
 
     public function show($id)
@@ -66,7 +65,10 @@ class FolhaObraController extends Controller
         if(count($empresas) > 0) {
             $empresa = $empresas[0];
             $linhaobras = Linhaobra::all();
-            $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'id_folhaobra' => null,'linhaobras'=>$linhaobras]);
+            $auth = new Auth();
+            $nomefuncionario = $auth->getUserName();
+            $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'id_folhaobra' => null,'linhaobras'=>$linhaobras,
+                'nomefuncionario' => $nomefuncionario]);
         }
     }
 
