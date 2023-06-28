@@ -93,9 +93,8 @@
                             </table>
                             <div class="row">
                                 <div class="col-12">
-                                    <form action="selectservico.php?c=linhaobra&a=selectservico&id_folhaobra=<?=$id_folhaobra?>"
+                                    <form action="index.php?c=linhaobra&a=selectservico&id_folhaobra=<?=$id_folhaobra?>"
                                           method="POST" class="form-horizontal">
-                                        <input type="hidden" name="id_folhaobra" value="<?=$id_folhaobra?>">
                                         <div class="form-group row">
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="referencia" name="referencia">
@@ -146,7 +145,7 @@
                     <footer class="invoice-footer">
                         <div class="row">
                             <div class="col-12">
-                                <p>Emissão realizada por: <strong><?= $nomefuncionario ?></strong></p>
+                                <p>Emissão realizada por: <strong><?=$nomefuncionario?></strong></p>
                             </div>
                         </div>
                     </footer>

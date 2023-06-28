@@ -37,7 +37,7 @@ CREATE TABLE `ivas` (
 
 LOCK TABLES `ivas` WRITE;
 /*!40000 ALTER TABLE `ivas` DISABLE KEYS */;
-INSERT INTO `ivas` VALUES (1,20,'Iva','Sim'),(2,20,'Descricao','Não'),(3,20,'Descricao','Sim'),(5,21,'Descricao','Não');
+INSERT INTO `ivas` VALUES (1,23,'Iva','Sim'),(2,13,'Descricao','Sim'),(3,6,'Descricao','Sim'),(5,21,'Descricao','Não');
 /*!40000 ALTER TABLE `ivas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-28 11:26:45
+-- Dump completed on 2023-06-28 20:52:43

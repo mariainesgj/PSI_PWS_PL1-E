@@ -78,28 +78,34 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($servicos as $servico) { ?>
+                                <?php foreach ($linhaobras as $linhaobra) { ?>
                                 <tr>
                                     <td><?=$servico->referencia?></td>
                                     <td><?=$servico->descricao?></td>
-                                    <td><?=$servico->precohora?></td>
-                                    <?php } ?>
-                                    <?php foreach ($linhaobras as $linhaobra) { ?>
                                     <td><?=$linhaobra->quantidade?></td>
+                                    <td><?=$servico->precohora?></td>
                                     <td><?=$linhaobra->valoriva?></td>
                                     <td><?=$linhaobra->valorunitario?></td>
+                                    <td><?=$subtotal?></td>
                                     <?php } ?>
-                                    <td></td>
-                                    <td><form action="selectservico.php?c=linhaobra&a=selectservico" method="POST">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="referencia" name="referencia">
-                                            </div></td>
-                                    <td> <a href="index.php?c=linhaobra&a=selectservico" class="btn btn-info" role="button">Selecionar</a></td>
-                                    </form>
-                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
+                            <div class="row">
+                                <div class="col-12">
+                                    <form action="index.php?c=linhaobra&a=selectservico&id_folhaobra=<?=$id_folhaobra?>"
+                                          method="POST" class="form-horizontal">
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="referencia" name="referencia">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <button type="submit" class="btn btn-info">Selecionar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -136,6 +142,13 @@
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
+                    <footer class="invoice-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Emissão realizada por: <strong><?=$nomefuncionario?></strong></p>
+                            </div>
+                        </div>
+                    </footer>
 
                     <!-- this row will not appear when printing -->
                     <div class="row no-print">

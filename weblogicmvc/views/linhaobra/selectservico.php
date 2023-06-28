@@ -27,7 +27,7 @@
                     <th style="width: 8%">
                         Referência
                     </th>
-                    <th style="width: 8%">
+                    <th style="width: 10%">
                         Descrição
                     </th>
                     <th style="width: 8%">
@@ -36,7 +36,7 @@
                     <th style="width: 8%">
                         Id Iva
                     </th>
-                    <th style="width: 10%">
+                    <th style="width: 1%">
                         Select
                     </th>
                 </tr>
@@ -48,12 +48,12 @@
                         <td><?=$servico->referencia?></td>
                         <td><?=$servico->descricao?></td>
                         <td><?=$servico->precohora?></td>
-                        <td><?= $servico->iva->percentagem?>%</td>
+                        <td><?= $servico->id_iva?></td>
                         <td class="project-actions text-right">
                             <div class="row">
                                 <div class="col-md-12 text-right">
                                     <div class="btn-group">
-                                        <a href="index.php?c=folhaobra&a=store&idservico=<?=$servico->id?>&idfolhaobra=<?=$id_folhaobra?>&idcliente=<?=$cliente?>"
+                                        <a href="index.php?c=linhaobra&a=store&id_folhaobra=<?=$id_folhaobra?>&id_servico=<?=$servico->id?>&id_cliente=<?=$id_cliente?>"
                                            class="btn btn-info" role="button">Selecionar</a>
                                         </a>
                                     </div>

@@ -8,44 +8,24 @@ class LinhaObraController extends Controller
 {
     public function __construct()
     {
-        $roles = ['admin', 'funcionario'];
+        $roles = ['admin', 'funcionario','cliente'];
         $this->authenticationFilterAllows($roles);
     }
-    public function index($id_folhaobra)
+
+    public function selectservico($id_folhaobra)
     {
-        $auth = new Auth();
-        $nomefuncionario = $auth->getUserName();
-        $folhaobras = FolhaObra::all();
-        $id_folhaobra = $folhaobras->id;
-        $linhaobras = LinhaObra::find($id_folhaobra);
-        $id_cliente = $folhaobras->id_cliente;
-        $this->renderView('linhaobra', 'index', ['linhaobras'=>$linhaobras, 'id_folhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente,
-            'nomefuncionario' => $nomefuncionario]);
+        $servicos = Servico::all();
+        $folhaobra = FolhaObra::find($id_folhaobra);
+        $id_cliente = $folhaobra->id_cliente;
+
+        $this->renderView('linhaobra', 'selectservico', ['servicos' => $servicos, 'id_folhaobra' => $id_folhaobra, 'id_cliente' => $id_cliente]);
     }
 
-    public function selectservico($id)
+    public function create($id_folhaobra, $id_cliente)
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $referencia = $_POST['referencia'];
-            $servicos = Servico::find_by_referencia($referencia);
-            $folhaobra = FolhaObra::find($id);
+        $folhaobra = FolhaObra::find($id_folhaobra);
 
-            if (is_null($servicos)) {
-                $servicos_all = Servico::all();
-                $this->renderView('linhaobra', 'selectservico', ['servicos' => $servicos_all, 'id_folhaobra' => $folhaobra]);
-            } else {
-                $this->redirectToRoute('linhaobra', 'create', ['id_servico' => $servicos->id, 'id_folhaobra' => $folhaobra]);
-            }
-        } else {
-            header('Location: '.constant('INVALID_ACCESS_ROUTE'));
-        }
-    }
-
-    public function create($id_folhaobra,$id_cliente)
-    {
-        $folhaobra = new FolhaObra();
-
-        if ($folhaobra->estado != "emitida"){
+        if ($folhaobra->estado != "emitida") {
             $linhaobras = LinhaObra::find_all_by_id_folhaobra($id_folhaobra);
 
             if ($id_cliente != 0) {
@@ -54,37 +34,41 @@ class LinhaObraController extends Controller
                 $folhaobras = FolhaObra::all();
                 $this->renderView('linhaobras', 'create', ['folhaobras' => $folhaobras, 'linhaobras' => $linhaobras, 'cliente' => $cliente]);
             }
-        }else{
+        } else {
             $this->redirectToRoute('linhaobras', 'index');
         }
     }
 
-    public function store($id_folhaobra,$id_servico,$id_cliente)
+    public function store($id_folhaobra, $id_servico, $id_cliente)
     {
         $linhaobra = new LinhaObra();
-        $servico = Servico::find($id_servico);
-        $linhaobra = LinhaObra::find_all_by_id_folhaobra($id_folhaobra);
+        //atribuir valores ao post
+        $linhaobra->quantidade = $_POST['quantidade'];
+        $linhaobra->valorunitario = $_POST['valorunitario'];
 
-        $linhaobra->quantidade = 0;
-        $linhaobra->valor = $servico->precohora;
-        $linhaobra->valoriva =  $servico->precohora * ($servico->iva->percentagem / 100);
-        $linhaobra->valortotal = $servico->precohora + ($servico->precohora * ($servico->iva->percentagem / 100));
-        $linhaobra->subtotal = $linhaobra->valor * $linhaobra->quantidade;
+        $servico = Servico::find($id_servico);
+
+        $linhaobra = new LinhaObra();
+        $linhaobra->valorunitario = $servico->precohora;
+        $iva = Iva::find($servico->id_iva);
+        $percentagem = $iva->percentagem;
+        $linhaobra->valoriva = $servico->precohora * ($percentagem / 100);
+        $linhaobra->valortotal = $servico->precohora + ($servico->precohora * ($percentagem / 100));
+        $linhaobra->subtotal = $linhaobra->valorunitario * $linhaobra->quantidade;
 
         $folhaobra = FolhaObra::find($id_folhaobra);
 
-        $linhaobra->folha_obras_id = $folhaobra->id;
-        $linhaobra->servico_id = $id_servico;
+        $linhaobra->id_folhaobra = $folhaobra->id;
+        $linhaobra->id_servico = $id_servico;
 
-        $user = User::find($id_cliente);
+        $cliente = User::find($id_cliente);
 
-        if($linhaobra->is_valid())
-        {
+        if ($linhaobra->is_valid()) {
             $empresas = Empresa::all();
-            if(count($empresas) > 0) {
+            if (count($empresas) > 0) {
                 $empresa = $empresas[0];
                 $linhaobra->save();
-                $this->renderView('linhaobra', 'create', ['empresa'=>$empresa, 'id_cliente' => $id_cliente, 'id_folhaobra'=>$id_folhaobra, 'cliente'=>$user]);
+                $this->renderView('linhaobra', 'create', ['empresa' => $empresa, 'id_folhaobra' => $folhaobra, 'id_cliente' =>$cliente, 'id_servico' => $id_servico]);
             }
         } else {
             $this->redirectToRoute('folhaobra', 'create');
