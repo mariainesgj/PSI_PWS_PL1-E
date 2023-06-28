@@ -34,9 +34,10 @@ Perfil Cliente
 1. Clone o repositório do projeto do GitHub.
 2. Certifique-se de ter o servidor web (por exemplo, Apache) configurado e apontando para o diretório público do projeto.
 3. No terminal, navegue até o diretório do projeto e execute o comando composer install para instalar as dependências.
+4. Correr o sql da estrutura e de dados
 
 ## Utilização
-1. Acesse a aplicação através da URL fornecida.
+1. Aceda a aplicação através da URL fornecida.
 2. Dependendo do seu perfil (funcionário, administrador ou cliente), faça login usando as credenciais adequadas.
 3. Explore as funcionalidades disponíveis com base no seu perfil:
     - Funcionários podem gerar folhas de obra, gerir clientes, serviços e taxas de IVA, e visualizar o histórico de folhas de obra.
