@@ -46,6 +46,8 @@ Perfil Cliente
 4. Siga a interface intuitiva da aplicação para realizar as ações desejadas e navegar pelas diferentes seções.
 5. Certifique-se de fazer logout quando terminar de usar a aplicação para garantir a segurança da sua conta.
 
+Repositório Github: https://github.com/mariainesgj/PSI_PWS_PL1-E
+
 ## Autores
 Diana Catarino `2220863`
 <br> Maria Jesus `2211923`
