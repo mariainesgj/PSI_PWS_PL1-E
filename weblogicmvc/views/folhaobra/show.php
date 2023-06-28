@@ -1,43 +1,87 @@
-<div style="text-align: center; border-style: ridge;">
-    <h2 class="text-left top-space">IVA Show</h2>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <table class="table tablestriped">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Data</th>
-                <th>Valor Total</th>
-                <th>Iva Total</th>
-                <th>Estado</th>
-                <th>Id Cliente</th>
-                <th>Id Funcionário</th>
-                <th>User Actions</th>
-            </tr>
-            </thead>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Folha Obra Show</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-            <tbody>
-            <tr>
-                <td><?=$folhaobra->id?></td>
-                <td><?=$folhaobra->data?></td>
-                <td><?=$folhaobra->valortotal?></td>
-                <td><?=$folhaobra->ivatotal?></td>
-                <td><?=$folhaobra->estado?></td>
-                <td><?=$folhaobra->id_cliente?></td>
-                <td><?=$folhaobra->id_funcionario?></td>
-                <td>
-                    <a href="index.php?c=iva&a=edit&id=<?=$folhaobra->id ?>"
-                       class="btn btn-info" role="button">Editar</a>
-                </td>
-            </tr>
-            </tbody>
-            <tr>
-                <td>
-                    <a href="router.php?c=folhaobra&a=create" class="btn btn-info" role="button">Criar</a>
-                </td>
-            </tr>
-        </table>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Folha Obra</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Data</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=date('d-m-Y', strtotime($folhaobra->data))?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Valor Total</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$folhaobra->valortotal?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Iva Total</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$folhaobra->ivatotal?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Estado</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$folhaobra->estado?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Id Cliente</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$folhaobra->id_cliente?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="info-box bg-light">
+                                    <div class="info-box-content">
+                                        <span class="info-box-text text-center text-muted">Id Funcionario</span>
+                                        <span class="info-box-number text-center text-muted mb-0"><?=$folhaobra->id_funcionario?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+    </section>
+    <!-- /.content -->
+    <div class="row">
+        <div class="col-12 text-left">
+            <a href="index.php?c=folhaobra&a=index" class="btn btn-secondary">Voltar</a>
+        </div>
     </div>
 </div>
-</div>
+<!-- /.content-wrapper -->

@@ -1,5 +1,3 @@
-<html>
-<body>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -44,7 +42,7 @@
                     <th style="width: 10%">
                         Id Funcionário
                     </th>
-                    <th style="width: 10%">
+                    <th style="width: 1%">
                         User Actions
                     </th>
                 </tr>
@@ -53,7 +51,7 @@
                 <?php foreach ($folhaobras as $folhaobra) { ?>
                     <tr>
                         <td><?=$folhaobra->id?></td>
-                        <td><?=$folhaobra->data?></td>
+                        <td><?=date('d-m-Y', strtotime($folhaobra->data))?></td>
                         <td><?=$folhaobra->valortotal?></td>
                         <td><?=$folhaobra->ivatotal?></td>
                         <td><?=$folhaobra->estado?></td>
@@ -69,7 +67,7 @@
                                         <a class="btn btn-info btn-sm" href="index.php?c=folhaobra&a=edit&id=<?=$folhaobra->id?>">
                                             <i class="fas fa-pencil-alt"></i>
                                         </a>
-                                        <a class="btn btn-secondary btn-sm" href="index.php?c=folhaobra&a=imprimirfo&id=<?=$folhaobra->id?>">
+                                        <a class="btn btn-secondary btn-sm" href="index.php?c=folhaobra&a=imprimirfo&id=<?=$folhaobra->id?>&id_cliente=<?=$folhaobra->id_cliente?>">
                                             <i class="fas fa-print"></i>
                                         </a>
                                         <a class="btn btn-danger btn-sm" href="index.php?c=folhaobra&a=delete&id=<?=$folhaobra->id?>">
@@ -89,5 +87,3 @@
     <!-- /.card -->
 </section>
 <!-- /.content -->
-</body>
-</html>

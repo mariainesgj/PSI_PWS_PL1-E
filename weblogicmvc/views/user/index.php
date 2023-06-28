@@ -1,5 +1,3 @@
-<html>
-<body>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -106,5 +104,3 @@
            role="button">New</a>
     </p>
 </div>
-</body>
-</html>

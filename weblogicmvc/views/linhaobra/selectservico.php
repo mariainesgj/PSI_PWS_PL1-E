@@ -1,5 +1,3 @@
-<html>
-<body>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -72,5 +70,3 @@
     <!-- /.card -->
 </section>
 <!-- /.content -->
-</body>
-</html>

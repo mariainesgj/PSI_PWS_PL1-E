@@ -21,16 +21,12 @@ class FolhaObraController extends Controller
 
     public function show($id)
     {
-        $auth = new Auth();
-        $adminfo = Folhaobra::find_all_by_estado('emitida, paga');
-        $funcfo = Folhaobra::find_all_by_funcionario_id($id);
-        if(is_null($adminfo) && is_null($funcfo)) {
+        $folhaobras = FolhaObra::find($id);
+        if(is_null($folhaobras)) {
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
-        }else if($auth->getUserRole() == 'admin'){
-            $this->renderView('folhaobra', 'show', ['folhaobras'=>$adminfo]);
         }
-        else if($auth->getUserRole() == 'funcionario'){
-            $this->renderView('folhaobra', 'show', ['folhaobras'=>$funcfo]);
+        else{
+            $this->renderView('folhaobra', 'show', ['folhaobra' => $folhaobras]);
         }
     }
 
@@ -46,13 +42,15 @@ class FolhaObraController extends Controller
 
     public function create()
     {
+        $folhaobra = new FolhaObra();
+        $id_folhaobra = $folhaobra->id;
         $empresas = Empresa::all();
         if(count($empresas) > 0) {
             $empresa = $empresas[0];
             $linhaobras = Linhaobra::all();
             $auth = new Auth();
             $nomefuncionario = $auth->getUserName();
-            $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'id_folhaobra' => null,'linhaobras'=>$linhaobras,
+            $this->renderView('folhaobra', 'create', ['empresa' => $empresa,'id_folhaobra' => $id_folhaobra,'linhaobras'=>$linhaobras,
                 'nomefuncionario' => $nomefuncionario]);
         }
     }
@@ -67,6 +65,7 @@ class FolhaObraController extends Controller
         $folhaobra->estado = 'em lancamento';
         $folhaobra->id_cliente = $id_cliente;
         $folhaobra->id_funcionario = $auth->getUserId();
+        $nomefuncionario = $auth->getUserName();
 
         if ($folhaobra->is_valid()) {
             $empresas = Empresa::all();
@@ -76,7 +75,8 @@ class FolhaObraController extends Controller
                 $empresa = $empresas[0];
                 $folhaobra->save();
                 $linhaobras = [];
-                $this->renderView('linhaobra', 'index', ['cliente' => $user, 'id_folhaobra' => $folhaobra->id, 'empresa' => $empresa, 'linhaobras' => $linhaobras]);
+                $this->renderView('linhaobra', 'index', ['cliente' => $user, 'id_folhaobra' => $folhaobra->id, 'empresa' => $empresa,
+                    'linhaobras' => $linhaobras, 'nomefuncionario' => $nomefuncionario]);
             } else {
                 echo "Não há empresas disponíveis.";
             }
@@ -88,17 +88,18 @@ class FolhaObraController extends Controller
     public function edit($id)
     {
         $folhaobra = Folhaobra::find($id);
+        $id_funcionario = $folhaobra->id_funcionario;
         if(is_null($folhaobra)){
             header('Location: '.constant('INVALID_ACCESS_ROUTE'));
         }else{
-            $this->renderView('folhaobra','edit',['folhaobra'=> $folhaobra]);
+            $this->renderView('folhaobra','edit',['folhaobra'=> $folhaobra,'id_funcionario'=>$id_funcionario]);
         }
     }
 
     public function update($id)
     {
         $folhaobra = FolhaObra::find($id);
-        $linhaobras = LinhaObra::find_all_by_folha_obras_id($folhaobra->id);
+        $linhaobras = LinhaObra::find_all_by_id_folhaobra($folhaobra->id);
         $ivatotal = 0;
         $valor = 0;
         $folhaobra->update_attributes($this-> getHTTPPost());

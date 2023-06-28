@@ -1,5 +1,3 @@
-<html>
-<body>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -111,5 +109,3 @@
     </div>
 </div>
 <!-- /.content-wrapper -->
-</body>
-</html>

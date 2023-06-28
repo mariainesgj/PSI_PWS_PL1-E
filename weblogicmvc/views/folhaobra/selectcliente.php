@@ -1,5 +1,3 @@
-<html>
-<body>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -13,12 +11,12 @@
 
 <!-- Main content -->
 <section class="content">
-
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Select Cliente</h3>
         </div>
+
         <div class="card-body p-0">
             <table class="table table-striped projects">
                 <thead>
@@ -88,6 +86,4 @@
     <!-- /.card -->
 </section>
 <!-- /.content -->
-</body>
-</html>
 

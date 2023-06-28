@@ -1,6 +1,3 @@
-<html>
-<body>
-
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -96,7 +93,7 @@
                             </table>
                             <div class="row">
                                 <div class="col-12">
-                                    <form action="selectservico.php?c=linhaobra&a=selectservico&id_folhaobra=<?=$id_folhaobra?>&id_cliente=<?=$cliente->id?>"
+                                    <form action="selectservico.php?c=linhaobra&a=selectservico&id_folhaobra=<?=$id_folhaobra?>"
                                           method="POST" class="form-horizontal">
                                         <input type="hidden" name="id_folhaobra" value="<?=$id_folhaobra?>">
                                         <div class="form-group row">
@@ -110,7 +107,6 @@
                                     </form>
                                 </div>
                             </div>
-
                         </div>
                         <!-- /.col -->
                     </div>
@@ -127,26 +123,6 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-6">
-                            <?php
-                            $data = date('d-m-Y', strtotime('+15 days'));
-                            $subtotal = 0;
-                            $valortotal = 0;
-                            $ivatotal = 0;
-                            $totalfo = 0;
-                            echo  'Prazo de pagamento: ' .$data;
-                            foreach ($linhaobras as $linha) {
-
-                                $valortotal = $linha->valortotal;
-                                $valor = $linha->valorunitario;
-                                $subtotal += $valor;
-                                $totalfo += $valor;
-                                $iva += $linha->valoriva;
-                            }
-                            $folhaobra = FolhaObra::find($id_folhaobra);
-                            $folhaobra->valortotal = $totalfo;
-                            $folhaobra->ivatotal = $iva;
-                            $folhaobra->save();
-                            ?>
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
@@ -167,6 +143,13 @@
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
+                    <footer class="invoice-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Emissão realizada por: <strong><?= $nomefuncionario ?></strong></p>
+                            </div>
+                        </div>
+                    </footer>
 
                     <!-- this row will not appear when printing -->
                     <div class="row no-print">
@@ -183,7 +166,5 @@
 </section>
 <!-- /.content -->
 <!-- /.content-wrapper -->
-</body>
-</html>
 
 
