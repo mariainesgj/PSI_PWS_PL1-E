@@ -96,13 +96,14 @@
                             </table>
                             <div class="row">
                                 <div class="col-12">
-                                    <form action="selectservico.php?c=linhaobra&a=selectservico" method="POST" class="form-horizontal">
+                                    <form action="selectservico.php?c=linhaobra&a=selectservico&id_folhaobra=<?=$id_folhaobra?>&id_cliente=<?=$cliente->id?>"
+                                          method="POST" class="form-horizontal">
+                                        <input type="hidden" name="id_folhaobra" value="<?=$id_folhaobra?>">
                                         <div class="form-group row">
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="referencia" name="referencia">
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="hidden" name="id_folhaobra" value="<?= $id_folhaobra ?>">
                                                 <button type="submit" class="btn btn-info">Selecionar</button>
                                             </div>
                                         </div>
@@ -126,6 +127,26 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-6">
+                            <?php
+                            $data = date('d-m-Y', strtotime('+15 days'));
+                            $subtotal = 0;
+                            $valortotal = 0;
+                            $ivatotal = 0;
+                            $totalfo = 0;
+                            echo  'Prazo de pagamento: ' .$data;
+                            foreach ($linhaobras as $linha) {
+
+                                $valortotal = $linha->valortotal;
+                                $valor = $linha->valorunitario;
+                                $subtotal += $valor;
+                                $totalfo += $valor;
+                                $iva += $linha->valoriva;
+                            }
+                            $folhaobra = FolhaObra::find($id_folhaobra);
+                            $folhaobra->valortotal = $totalfo;
+                            $folhaobra->ivatotal = $iva;
+                            $folhaobra->save();
+                            ?>
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
